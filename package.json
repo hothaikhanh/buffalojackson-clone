@@ -1,0 +1,26 @@
+{
+  "name": "buffalojackson-clone",
+  "version": "1.0.0",
+  "description": "a buffalojackson.com clone using vanila JS, html, css",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile": "sass --watch src/scss/style.scss:src/css/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hothaikhanh/buffalojackson-clone.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hothaikhanh/buffalojackson-clone/issues"
+  },
+  "homepage": "https://github.com/hothaikhanh/buffalojackson-clone#readme",
+  "devDependencies": {
+    "sass": "^1.55.0"
+  },
+  "dependencies": {
+    "normalize.css": "^8.0.1"
+  }
+}

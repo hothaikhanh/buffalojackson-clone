@@ -1,0 +1,233 @@
+@use "../ulti/varibles" as var;
+
+.header__container {
+    background-image: url("/src/assets/img/nav-bg.webp");
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-content: stretch;
+}
+
+.header__side {
+    width: 33%;
+    flex-direction: column;
+    margin: 0px 40px;
+    height: fit-content;
+}
+
+.header__top {
+    display: flex;
+    color: var.$tinted-yellow;
+
+    height: 40%;
+    border-bottom: 1px solid #453929;
+    :hover {
+        animation: hoverColor 0.2s linear forwards;
+    }
+}
+
+.header__top.reversed {
+    flex-direction: row-reverse;
+}
+
+.header__bottom {
+    display: flex;
+    height: auto;
+    align-items: center;
+    color: var.$tinted-yellow;
+    :hover {
+        animation: hoverFade 0.2s linear forwards;
+    }
+}
+
+.header__bottom.reversed {
+    flex-direction: row-reverse;
+}
+
+.header__dropdown {
+    padding: 1.75rem 1.6rem 2rem 0rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1px;
+
+    ::before {
+        content: "";
+        display: inline-block;
+        background-color: red;
+        width: 100%;
+        height: 10px;
+        margin-bottom: -40px;
+    }
+}
+
+.header__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 16px 20px;
+    line-height: 1.5rem;
+    font-size: 0.95rem;
+    width: fit-content;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.header__item svg {
+    margin-right: 6px;
+    color: inherit;
+}
+
+.header__search {
+    display: flex;
+    align-self: flex-end;
+    align-items: center;
+    color: var.$tinted-yellow;
+    padding: 16px 0px;
+
+    :focus-visible {
+        border: none;
+        outline: none;
+    }
+}
+.search__input {
+    visibility: hidden;
+    color: var.$tinted-yellow;
+    font-size: 1.25rem;
+    width: 270px;
+    height: 44px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #453929;
+}
+.search__toggle {
+}
+
+// center section
+.header__center {
+    width: 33%;
+}
+
+.header__center--logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.header__center--logo-img {
+    width: 230px;
+    margin: auto;
+    object-fit: contain;
+}
+
+//DROP DOWN MENU
+
+.dropdown__menu {
+    display: none;
+    background-image: url("/src/assets/img/nav-bg.webp");
+    width: 100%;
+    align-content: stretch;
+    height: fit-content;
+    border-top: 1px solid #453929;
+    justify-content: space-between;
+    padding: 15px 25px;
+    position: relative;
+
+    // &::after {
+    //     content: "";
+    //     background-color: red;
+    //     opacity: 50%;
+    //     height: 20px;
+    //     width: 100%;
+    //     display: inline-block;
+    //     position: absolute;
+    //     top: 0px;
+    //     left: 0px;
+    // }
+}
+
+.dropdown__menu.dropdown--active {
+    display: flex;
+}
+
+.menu__section {
+    display: flex;
+    flex-direction: column;
+    padding: 0px 15px;
+    flex-basis: calc(100% / 6);
+    flex-grow: 1;
+    color: var.$tinted-yellow;
+}
+
+.menu__title {
+    font-weight: 700;
+    padding: 19px 0px 14px;
+    line-height: 1.6rem;
+    font-size: 1rem;
+    letter-spacing: 0.8px;
+    border-bottom: 1px solid #453929;
+    text-transform: uppercase;
+    :hover {
+        animation: hoverFade 0.2s linear forwards;
+    }
+}
+.menu__item {
+    font-weight: 500;
+
+    padding: 6px 0px;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    color: var.$light-brown;
+    text-transform: capitalize;
+    :hover {
+        animation: hoverDropdown 0.2s linear forwards;
+    }
+}
+
+.menu__item--top {
+    padding-top: 12px;
+}
+
+.menu__item--new {
+    color: var.$orange;
+    text-transform: uppercase;
+    :hover {
+        animation: none;
+    }
+}
+
+.menu__image {
+    width: 100%;
+    padding: 21px 0 0;
+    margin-bottom: 10px;
+}
+//DROP DOWN MENU
+
+@keyframes hoverFade {
+    0% {
+        opacity: 100%;
+    }
+    25% {
+        opacity: 90%;
+    }
+    50% {
+        opacity: 80%;
+    }
+    100% {
+        opacity: 70%;
+    }
+}
+
+@keyframes hoverColor {
+    100% {
+        color: var.$dark;
+        background-color: var.$tinted-yellow;
+    }
+}
+
+@keyframes hoverDropdown {
+    100% {
+        color: var.$tinted-yellow;
+    }
+}
