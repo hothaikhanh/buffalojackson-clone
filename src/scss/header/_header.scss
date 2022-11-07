@@ -1,4 +1,10 @@
 @use "../ulti/varibles" as var;
+.header {
+    position: relative;
+    height: fit-content;
+    width: 100%;
+    z-index: 10;
+}
 
 .header__container {
     background-image: url("/src/assets/img/nav-bg.webp");
@@ -49,6 +55,7 @@
     text-transform: uppercase;
     font-weight: 700;
     letter-spacing: 1px;
+    line-height: 1.125rem;
 
     ::before {
         content: "";
@@ -123,28 +130,19 @@
 
 //DROP DOWN MENU
 
+.dropdown__container {
+    position: absolute;
+    width: 100%;
+}
+
 .dropdown__menu {
     display: none;
     background-image: url("/src/assets/img/nav-bg.webp");
-    width: 100%;
     align-content: stretch;
     height: fit-content;
     border-top: 1px solid #453929;
     justify-content: space-between;
     padding: 15px 25px;
-    position: relative;
-
-    // &::after {
-    //     content: "";
-    //     background-color: red;
-    //     opacity: 50%;
-    //     height: 20px;
-    //     width: 100%;
-    //     display: inline-block;
-    //     position: absolute;
-    //     top: 0px;
-    //     left: 0px;
-    // }
 }
 
 .dropdown__menu.dropdown--active {
