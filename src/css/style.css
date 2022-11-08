@@ -347,6 +347,9 @@ h6 {
   margin-top: 35px;
   display: flex;
 }
+.slider__links :hover {
+  opacity: 95%;
+}
 
 .slider__btn {
   padding-top: 14px;
@@ -359,10 +362,32 @@ h6 {
   font-size: 24px;
   line-height: 1.6em;
   font-weight: 700;
+  cursor: pointer;
 }
 
 .slider__btn + .slider__btn {
   margin-left: 40px;
+}
+
+.slider__transition {
+  pointer-events: none;
+  width: 100%;
+  height: 600px;
+  position: absolute;
+  top: 0;
+  display: block;
+  animation: page-transition-animation 1.5s linear forwards;
+}
+
+@keyframes page-transition-animation {
+  0% {
+    background-color: #d9ccb5;
+    opacity: 100%;
+  }
+  100% {
+    display: none;
+    opacity: 0%;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

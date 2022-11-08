@@ -54,26 +54,48 @@ const landingPage = {
         let slidersCount = 4;
         let sliders = Array.from(Array(slidersCount).keys());
 
+        let container = $(".slider__transition-container");
         let leftBtn = $(".slider__nav--left");
         let rightBtn = $(".slider__nav--right");
         let slidersPage = $$(".slider__page");
 
+        let nextSlideTimer = setInterval(() => {
+            toNextSlide();
+        }, 8000);
+
         leftBtn.addEventListener("click", () => {
-            sliders.unshift(sliders.pop());
-            slidersPage[sliders[0]].classList.add("slider__page--active");
-            slidersPage[sliders[1]].classList.remove("slider__page--active");
+            clearInterval(nextSlideTimer);
+            toPrevSlide();
+            nextSlideTimer = setInterval(() => {
+                toNextSlide();
+            }, 8000);
         });
         rightBtn.addEventListener("click", () => {
+            clearInterval(nextSlideTimer);
+            toNextSlide();
+            nextSlideTimer = setInterval(() => {
+                toNextSlide();
+            }, 8000);
+        });
+
+        function playTransition() {
+            container.innerHTML = "";
+            container.innerHTML = `<div class=" slider__transition"></div>`;
+        }
+
+        function toNextSlide() {
+            playTransition();
             sliders.push(sliders.shift());
             slidersPage[sliders[sliders.length - 1]].classList.remove("slider__page--active");
             slidersPage[sliders[0]].classList.add("slider__page--active");
-        });
+        }
 
-        // setInterval(function () {
-        //     sliders.push(sliders.shift());
-        //     slidersPage[sliders[sliders.length - 1]].classList.remove("slider__page--active");
-        //     slidersPage[sliders[0]].classList.add("slider__page--active");
-        // }, 8000);
+        function toPrevSlide() {
+            playTransition();
+            sliders.unshift(sliders.pop());
+            slidersPage[sliders[0]].classList.add("slider__page--active");
+            slidersPage[sliders[1]].classList.remove("slider__page--active");
+        }
     },
     start: function () {
         this.menuStart();
