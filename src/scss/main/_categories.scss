@@ -1,0 +1,38 @@
+@use "../ulti/varibles" as var;
+.categories__container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    // background-color: yellow;
+    padding: 24px 0px;
+}
+
+.categories__list {
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+}
+.category {
+    height: auto;
+    width: auto;
+    :hover {
+        color: var.$orange;
+    }
+}
+
+.category__pic {
+    width: 150px;
+    height: 150px;
+
+    cursor: pointer;
+}
+.category__name {
+    padding: 10px 0px;
+    margin-top: 20px;
+    font-size: 1.6rem;
+    line-height: 1.6rem;
+    text-align: center;
+    cursor: pointer;
+    transition-property: color;
+    transition-duration: 0.2s;
+}

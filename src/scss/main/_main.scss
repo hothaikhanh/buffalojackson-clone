@@ -1,0 +1,12 @@
+@use "../ulti/varibles" as var;
+
+// .main-content {
+// }
+
+.content-wrapper {
+}
+
+.double-section__container {
+    background-color: var.$default-background;
+    color: var.$white;
+}

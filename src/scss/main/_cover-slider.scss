@@ -1,13 +1,11 @@
 @use "../ulti/varibles" as var;
 
-// .main-content {
-// }
-
-.main-slider {
+.cover-slider {
     position: relative;
-    display: flex;
     align-items: center;
+    display: flex;
 }
+
 .slider__nav {
     z-index: 1;
     position: absolute;
