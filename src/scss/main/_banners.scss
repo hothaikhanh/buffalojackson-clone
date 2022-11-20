@@ -1,4 +1,60 @@
 @use "../ulti/varibles" as var;
+
+.banner__container {
+    position: relative;
+    width: 100%;
+    margin: 25px 0px 0px;
+    padding: 30px calc(100% / 12 - 20px);
+    min-height: 500px;
+    background-color: rgb(68, 0, 0);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: cover;
+}
+
+.banner__overlay {
+    position: absolute;
+    background-color: var.$dark;
+    opacity: 0.5;
+    display: inline-block;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+}
+
+.banner__contents {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner__title {
+    font-family: var.$title-font;
+    text-transform: uppercase;
+    font-size: 3.75rem;
+    line-height: 0.9em;
+    margin: 0px;
+    padding-top: 40px;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+.banner__details {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    text-align: center;
+    font-size: 1.25rem;
+    line-height: 2.125rem;
+    margin-top: 10px;
+    padding-bottom: 30px;
+    max-width: 77%;
+}
+
 .banner-event__container {
     width: 100%;
     color: var.$dark;
@@ -14,24 +70,17 @@
     padding: 0px calc(100% / 12) 20px;
 }
 
-.banner__title {
-    font-family: var.$title-font;
-    text-transform: uppercase;
-    font-size: 3.75rem;
-}
-.banner__details {
-    font-family: var.$text-font;
-    text-align: center;
-    font-size: 1rem;
-}
-
 .banner__title--event {
+    padding: 0px;
     margin: 25px 0px 0px;
     font-size: 2.8rem;
     font-weight: 400;
+    letter-spacing: normal;
+    line-height: 1.2em;
 }
 
 .banner__details--event {
+    font-family: var.$text-font;
     padding: 10px 0px 25px;
     font-size: 1rem;
     line-height: 1.6rem;
@@ -54,16 +103,6 @@
     opacity: 0.9;
 }
 
-.banner__container {
-    width: 100%;
-    margin: 25px 0px 0px;
-    padding: 0px calc(100% / 12 - 20px);
-
-    min-height: 500px;
-    background-color: rgb(68, 0, 0);
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.banner-1 {
+    background-image: url(https://i.shgcdn.com/e483c48e-fa5b-480b-8854-cc7d4ee97a5e/-/format/auto/-/preview/3000x3000/-/quality/lighter/);
 }

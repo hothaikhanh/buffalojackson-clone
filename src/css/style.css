@@ -389,6 +389,62 @@ h6 {
     opacity: 0%;
   }
 }
+.banner__container {
+  position: relative;
+  width: 100%;
+  margin: 25px 0px 0px;
+  padding: 30px calc(8.3333333333% - 20px);
+  min-height: 500px;
+  background-color: rgb(68, 0, 0);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-attachment: fixed;
+  background-position: center center;
+  background-size: cover;
+}
+
+.banner__overlay {
+  position: absolute;
+  background-color: #171007;
+  opacity: 0.5;
+  display: inline-block;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+}
+
+.banner__contents {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner__title {
+  font-family: "SS Nickson One", sans-serif;
+  text-transform: uppercase;
+  font-size: 3.75rem;
+  line-height: 0.9em;
+  margin: 0px;
+  padding-top: 40px;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+.banner__details {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  text-align: center;
+  font-size: 1.25rem;
+  line-height: 2.125rem;
+  margin-top: 10px;
+  padding-bottom: 30px;
+  max-width: 77%;
+}
+
 .banner-event__container {
   width: 100%;
   color: #171007;
@@ -404,25 +460,17 @@ h6 {
   padding: 0px 8.3333333333% 20px;
 }
 
-.banner__title {
-  font-family: "SS Nickson One", sans-serif;
-  text-transform: uppercase;
-  font-size: 3.75rem;
-}
-
-.banner__details {
-  font-family: "Libre Baskerville", serif;
-  text-align: center;
-  font-size: 1rem;
-}
-
 .banner__title--event {
+  padding: 0px;
   margin: 25px 0px 0px;
   font-size: 2.8rem;
   font-weight: 400;
+  letter-spacing: normal;
+  line-height: 1.2em;
 }
 
 .banner__details--event {
+  font-family: "Libre Baskerville", serif;
   padding: 10px 0px 25px;
   font-size: 1rem;
   line-height: 1.6rem;
@@ -445,17 +493,8 @@ h6 {
   opacity: 0.9;
 }
 
-.banner__container {
-  width: 100%;
-  margin: 25px 0px 0px;
-  padding: 0px calc(8.3333333333% - 20px);
-  min-height: 500px;
-  background-color: rgb(68, 0, 0);
-  color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.banner-1 {
+  background-image: url(https://i.shgcdn.com/e483c48e-fa5b-480b-8854-cc7d4ee97a5e/-/format/auto/-/preview/3000x3000/-/quality/lighter/);
 }
 
 .categories__container {
@@ -463,6 +502,8 @@ h6 {
   display: flex;
   justify-content: center;
   padding: 24px 0px;
+  background-color: #171007;
+  color: #fefaf0;
 }
 
 .categories__list {
@@ -500,9 +541,11 @@ h6 {
   max-width: 100%;
   height: auto;
   display: flex;
-  margin: 0px 50px;
+  padding: 0px 50px;
   padding-bottom: 50px;
   justify-content: space-between;
+  background-color: #171007;
+  color: #fefaf0;
 }
 
 .collection-link {
@@ -574,10 +617,83 @@ h6 {
   background: white;
 }
 
+.item-slider__wrapper {
+  margin: 40px 30px 20px;
+}
+
+.items-slider__title {
+  font-family: "SS Nickson One", sans-serif;
+  color: #171007;
+  font-size: 1.85rem;
+  letter-spacing: 2px;
+  border-bottom: 1px solid #a59580;
+  margin: 0px 0px 20px;
+  padding-top: 20px;
+  line-height: 3rem;
+}
+
 .items-slider__container {
-  height: 565.6px;
   width: 100%;
-  background-color: yellow;
+  margin: 20px 0px;
+  display: flex;
+}
+
+.items-slider__item {
+  border: 1px solid #a59580;
+  width: 275px;
+  height: 440px;
+}
+
+.items-slider__link {
+  display: inline-block;
+  padding: 15px;
+  width: 100%;
+  height: 100%;
+}
+
+.items-slider__pic {
+  margin-top: 15px;
+  background-color: red;
+  width: 100%;
+  height: 243px;
+}
+
+.items-slider__name {
+  margin-top: 24px;
+  font-family: "SS Nickson One", sans-serif;
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+  letter-spacing: 1px;
+  font-weight: 400;
+}
+
+.items-slider__price {
+  margin-top: 0.8rem;
+  font-size: 1.3rem;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 100;
+  line-height: normal;
+}
+
+.items-slider__ratings {
+  margin-top: 4px;
+  display: flex;
+}
+
+.items-slider__star {
+  width: 1rem;
+  height: 1rem;
+  margin-left: 1px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.star--full {
+  background-image: url(/src/assets/img/star.svg);
+}
+
+.star--half {
+  background-image: url(/src/assets/img/star-half.svg);
 }
 
 .double-section__container {

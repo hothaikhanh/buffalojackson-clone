@@ -4,9 +4,11 @@
     max-width: 100%;
     height: auto;
     display: flex;
-    margin: 0px 50px;
+    padding: 0px 50px;
     padding-bottom: 50px;
     justify-content: space-between;
+    background-color: var.$default-background;
+    color: var.$white;
 }
 
 .collection-link {
