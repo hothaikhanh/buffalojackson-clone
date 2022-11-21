@@ -1,7 +1,9 @@
 @use "../ulti/varibles" as var;
 
 .item-slider__wrapper {
+    position: relative;
     margin: 40px 30px 20px;
+    overflow: hidden;
 }
 
 .items-slider__title {
@@ -18,6 +20,9 @@
     width: 100%;
     margin: 20px 0px;
     display: flex;
+    width: 2000px;
+    background-color: yellow;
+    transition: transform 0.5s linear;
 }
 
 .items-slider__item {
@@ -71,4 +76,60 @@
 }
 .star--half {
     background-image: url(/src/assets/img/star-half.svg);
+}
+
+.items-slider__nav {
+    position: absolute;
+    width: 40px;
+    height: 80px;
+    border-radius: 0px 2px 2px 0px;
+    background-color: rgba(255, 255, 255, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px 0px 0px 6px;
+    fill: grey;
+    padding: 0px 5px;
+    margin: auto;
+    top: 0px;
+    bottom: 36px;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.slider-nav--right {
+    right: 0px;
+}
+
+.slider-nav--left {
+    left: 0px;
+    rotate: 180deg;
+}
+
+.slider-nav--inactive {
+    animation: fadeOut 0.2s forwards linear;
+}
+
+.slider-nav--active {
+    animation: fadeIn 0.2s forwards linear;
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
