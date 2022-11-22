@@ -11,7 +11,7 @@
     color: var.$dark;
     font-size: 1.85rem;
     letter-spacing: 2px;
-    border-bottom: 1px solid var.$light-brown;
+    border-bottom: 1px solid var.$border-color;
     margin: 0px 0px 20px;
     padding-top: 20px;
     line-height: 3rem;
@@ -20,13 +20,13 @@
     width: 100%;
     margin: 20px 0px;
     display: flex;
-    width: 2000px;
-    background-color: yellow;
+    // width: 2000px;
+    // background-color: yellow;
     transition: transform 0.5s linear;
 }
 
 .items-slider__item {
-    border: 1px solid var.$light-brown;
+    border: 1px solid var.$border-color;
     width: 275px;
     height: 440px;
 }

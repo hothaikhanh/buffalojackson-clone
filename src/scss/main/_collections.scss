@@ -26,16 +26,6 @@
     background-position: center;
 }
 
-.collection--new {
-    background-image: url(/src/assets/img/collection-new.webp);
-}
-.collection--best {
-    background-image: url(/src/assets/img/collection-best.webp);
-}
-.collection--fall {
-    background-image: url(/src/assets/img/collection-fall.webp);
-}
-
 .collection__contents {
     margin-bottom: 50px;
 }
@@ -72,4 +62,14 @@
 .collection__btn:hover {
     color: black;
     background: white;
+}
+
+.collection--new {
+    background-image: url(/src/assets/img/collection-new.webp);
+}
+.collection--best {
+    background-image: url(/src/assets/img/collection-best.webp);
+}
+.collection--fall {
+    background-image: url(/src/assets/img/collection-fall.webp);
 }
