@@ -1,0 +1,33 @@
+@use "../ulti/varibles" as var;
+
+.statistic-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: rgba($color: var.$orange, $alpha: 0.2);
+}
+.stat {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+
+    width: calc(100% / 3);
+}
+
+div.stat + div.stat {
+    border-left: 1px solid var.$border-color;
+}
+.stat__icon {
+    max-width: 42px;
+    max-height: 42px;
+}
+.stat__text {
+    font-family: var.$title-font;
+    font-size: 2rem;
+    font-weight: 400;
+    line-height: normal;
+    margin: 10px auto;
+}

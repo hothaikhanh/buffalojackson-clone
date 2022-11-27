@@ -16,6 +16,32 @@
     background-size: cover;
 }
 
+.banner-end {
+    margin: 0px;
+    min-height: 600px;
+}
+
+.banner-end .banner__contents {
+    width: 80%;
+}
+
+.banner-end .banner__title {
+    font-size: 5.3rem;
+}
+
+.banner-1 {
+    background-image: url(https://i.shgcdn.com/e483c48e-fa5b-480b-8854-cc7d4ee97a5e/-/format/auto/-/preview/3000x3000/-/quality/lighter/);
+}
+
+.banner-2 {
+    background-image: url(https://i.shgcdn.com/9e02186b-e9d4-4fb4-ae2e-506c8a2c8ab3/-/format/auto/-/preview/3000x3000/-/quality/lighter/);
+    margin-top: 0px;
+}
+
+.banner-3 {
+    background-image: url(https://i.shgcdn.com/d68f05f2-f410-458b-8af8-ff8b55ec6f11/-/format/auto/-/preview/3000x3000/-/quality/lighter/);
+}
+
 .banner__overlay {
     position: absolute;
     background-color: var.$dark;
@@ -101,8 +127,4 @@
 
 .banner__btn:hover {
     opacity: 0.9;
-}
-
-.banner-1 {
-    background-image: url(https://i.shgcdn.com/e483c48e-fa5b-480b-8854-cc7d4ee97a5e/-/format/auto/-/preview/3000x3000/-/quality/lighter/);
 }

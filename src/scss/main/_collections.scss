@@ -36,8 +36,11 @@
     font-weight: 400;
     line-height: 2.15rem;
     margin-top: 10px;
+    text-transform: capitalize;
 }
 .collection__text--main {
+    text-transform: uppercase;
+
     text-align: center;
     font-size: 2.85rem;
     font-family: var.$title-font;
@@ -72,4 +75,14 @@
 }
 .collection--fall {
     background-image: url(/src/assets/img/collection-fall.webp);
+}
+
+.collection--wallets {
+    background-image: url(https://i.shgcdn.com/e0024149-4c9e-4a53-bb2c-25b059161699/-/format/auto/-/preview/3000x3000/-/quality/lighter/);
+}
+.collection--woman {
+    background-image: url(https://i.shgcdn.com/9b823158-27dc-479f-89ab-e94b33af00c5/-/format/auto/-/preview/3000x3000/-/quality/lighter/);
+}
+.collection--sale {
+    background-image: url(https://i.shgcdn.com/da3c9c93-0520-4b34-bada-1d1a52433ea7/-/format/auto/-/preview/3000x3000/-/quality/lighter/);
 }

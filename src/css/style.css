@@ -405,6 +405,32 @@ h6 {
   background-size: cover;
 }
 
+.banner-end {
+  margin: 0px;
+  min-height: 600px;
+}
+
+.banner-end .banner__contents {
+  width: 80%;
+}
+
+.banner-end .banner__title {
+  font-size: 5.3rem;
+}
+
+.banner-1 {
+  background-image: url(https://i.shgcdn.com/e483c48e-fa5b-480b-8854-cc7d4ee97a5e/-/format/auto/-/preview/3000x3000/-/quality/lighter/);
+}
+
+.banner-2 {
+  background-image: url(https://i.shgcdn.com/9e02186b-e9d4-4fb4-ae2e-506c8a2c8ab3/-/format/auto/-/preview/3000x3000/-/quality/lighter/);
+  margin-top: 0px;
+}
+
+.banner-3 {
+  background-image: url(https://i.shgcdn.com/d68f05f2-f410-458b-8af8-ff8b55ec6f11/-/format/auto/-/preview/3000x3000/-/quality/lighter/);
+}
+
 .banner__overlay {
   position: absolute;
   background-color: #171007;
@@ -493,10 +519,6 @@ h6 {
   opacity: 0.9;
 }
 
-.banner-1 {
-  background-image: url(https://i.shgcdn.com/e483c48e-fa5b-480b-8854-cc7d4ee97a5e/-/format/auto/-/preview/3000x3000/-/quality/lighter/);
-}
-
 .categories__container {
   width: 100%;
   display: flex;
@@ -575,9 +597,11 @@ h6 {
   font-weight: 400;
   line-height: 2.15rem;
   margin-top: 10px;
+  text-transform: capitalize;
 }
 
 .collection__text--main {
+  text-transform: uppercase;
   text-align: center;
   font-size: 2.85rem;
   font-family: "SS Nickson One", sans-serif;
@@ -615,6 +639,18 @@ h6 {
 
 .collection--fall {
   background-image: url(/src/assets/img/collection-fall.webp);
+}
+
+.collection--wallets {
+  background-image: url(https://i.shgcdn.com/e0024149-4c9e-4a53-bb2c-25b059161699/-/format/auto/-/preview/3000x3000/-/quality/lighter/);
+}
+
+.collection--woman {
+  background-image: url(https://i.shgcdn.com/9b823158-27dc-479f-89ab-e94b33af00c5/-/format/auto/-/preview/3000x3000/-/quality/lighter/);
+}
+
+.collection--sale {
+  background-image: url(https://i.shgcdn.com/da3c9c93-0520-4b34-bada-1d1a52433ea7/-/format/auto/-/preview/3000x3000/-/quality/lighter/);
 }
 
 .item-slider__wrapper {
@@ -788,6 +824,7 @@ h6 {
   margin: 0px;
   width: 100%;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  font-weight: 500;
 }
 
 .showcase-coll__description {
@@ -798,11 +835,14 @@ h6 {
   font-style: italic;
   text-align: center;
   line-height: 1.6rem;
+  margin-bottom: 15px;
 }
 
 .showcase-coll__items-list {
   width: 100%;
   display: flex;
+  margin-bottom: 25px;
+  justify-content: space-between;
 }
 
 .showcase-coll__item {
@@ -826,16 +866,67 @@ h6 {
   font-style: italic;
   text-align: center;
   padding: 10px 0px;
-  width: 100%;
+  width: 80%;
   line-height: normal;
 }
 
 .showcase-item__prices {
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: 400;
   line-height: 1.6rem;
   margin-bottom: 10px;
+}
+
+.price--old {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+.showcase-item_btn {
+  padding: 10px 100px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 700;
+  font-size: 1.25rem;
+  background-color: white;
+  color: black;
+  line-height: normal;
+  margin-bottom: 40px;
+}
+
+.statistic-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  background-color: rgba(160, 109, 51, 0.2);
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto;
+  width: 33.3333333333%;
+}
+
+div.stat + div.stat {
+  border-left: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.stat__icon {
+  max-width: 42px;
+  max-height: 42px;
+}
+
+.stat__text {
+  font-family: "SS Nickson One", sans-serif;
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: normal;
+  margin: 10px auto;
 }
 
 .double-section__container {
