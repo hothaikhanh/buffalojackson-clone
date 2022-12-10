@@ -7,7 +7,7 @@
     padding: 30px calc(100% / 12 - 20px);
     min-height: 500px;
     background-color: rgb(68, 0, 0);
-    color: white;
+    color: var.$white;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -20,6 +20,7 @@
     margin: 0px;
     min-height: 600px;
     padding: 0px 50px;
+    background-color: black;
     background-image: url(https://player.vimeo.com/video/764240066?dnt=1&id=764240066&autopause=0&transparent=0&autoplay=1&loop=1&muted=1&badge=0&byline=0&portrait=0&title=0&background=1);
 }
 
@@ -65,6 +66,10 @@
     bottom: 0px;
 }
 
+.banner-end .banner__overlay {
+    background-color: #1a1a1a;
+}
+
 .banner__video {
     top: 0;
     left: 0;
@@ -108,7 +113,7 @@
     margin: 0px;
     padding: 0px;
     min-height: fit-content;
-    background-color: white;
+    background-color: var.$white;
 }
 
 .banner-event .banner__border {

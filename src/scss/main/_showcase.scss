@@ -36,6 +36,7 @@
     border-bottom: 1px solid var.$border-color;
     font-weight: 500;
 }
+
 .showcase-coll__description {
     padding: 10px 0px;
     font-family: var.$text-font;
@@ -72,15 +73,25 @@
     font-style: italic;
     text-align: center;
     padding: 10px 0px;
-    width: 80%;
+    width: 85%;
     line-height: normal;
+    transition: all 0.2s linear;
 }
+
+.showcase-item__name:hover {
+    color: var.$orange;
+}
+
 .showcase-item__prices {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 0.9rem;
     font-weight: 400;
     line-height: 1.6rem;
     margin-bottom: 10px;
+}
+
+.price--current + .price--old {
+    margin-left: 10px;
 }
 
 .price--old {
@@ -94,8 +105,15 @@
     font-family: var.$default-font;
     font-weight: 700;
     font-size: 1.25rem;
-    background-color: white;
+    background-color: var.$white2;
     color: black;
     line-height: normal;
     margin-bottom: 40px;
+    cursor: pointer;
+    transition: all 0.2s linear;
+}
+
+.showcase-item_btn:hover {
+    background-color: black;
+    color: white;
 }

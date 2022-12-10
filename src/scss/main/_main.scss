@@ -1,7 +1,8 @@
 @use "../ulti/varibles" as var;
 
-// .main-content {
-// }
+.main-content {
+    background-color: var.$white;
+}
 
 .content-wrapper {
 }

@@ -1,11 +1,60 @@
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
 
+async function getJSON() {
+    const res = await fetch("./ITEMS.JSON");
+    const json = await res.json();
+    landingPage.ITEMS = json;
+}
+
 const landingPage = {
+    ITEMS: [],
+
+    render: async function () {
+        await getJSON();
+
+        let trendingList = $(".trending-list");
+        let suggestsList = $(".suggests-list");
+        let viewedList = $(".viewed-list");
+
+        this.ITEMS.map((item, index) => {
+            let starsCount = item.ratings;
+            let starSet = "";
+            for (; starsCount >= 1; starsCount--) {
+                starSet += `<div class="items-slider__star star--full"></div>`;
+            }
+            if (starsCount > 0) {
+                starSet += `<div class="items-slider__star star--half"></div>`;
+            }
+
+            let html = `
+            <a href="${item.link}" class="items-slider__link">
+            <div class="items-slider__pic" style="background-image: url(${item.picture});"></div>
+            <div class="items-slider__name">${item.name}</div>
+            <div class="items-slider__price">
+                <span class="price--old">${item.price_old}</span>
+                <span class="price--current">${item.price_current}</span>
+            </div>
+            <div class="items-slider__ratings">${starSet}</div>
+            </a>`;
+
+            if (item.isTrending) {
+                trendingList.innerHTML += html;
+            }
+
+            if (item.isSuggested) {
+                suggestsList.innerHTML += html;
+            }
+
+            if (item.isViewed) {
+                viewedList.innerHTML += html;
+            }
+        });
+    },
+
     menuStart: function () {
         let menuBtns = $$(".header__dropdown");
         let menuDropdown = $$(".dropdown__menu");
-
         let activeMenus = [];
         let onMenu = false;
         let onBtn = false;
@@ -104,10 +153,8 @@ const landingPage = {
         for (let i = 0; i < slidersList.length; i++) {
             let leftNav = slidersList[i].children[1];
             let rightNav = slidersList[i].children[3];
-            let slider = slidersList[i].children[2];
+            let slider = slidersList[i].children[2].children[0];
             let offSetWidth = slidersList[i].clientWidth - slider.clientWidth;
-
-            console.log(offSetWidth);
 
             leftNav.addEventListener("click", () => {
                 navFade(rightNav, leftNav);
@@ -118,6 +165,10 @@ const landingPage = {
                 navFade(rightNav, leftNav);
                 slider.style.transform = "translateX(" + offSetWidth + "px)";
             });
+
+            if (slidersList[i].clientWidth >= slider.clientWidth) {
+                rightNav.style = "display: none";
+            }
         }
 
         function navFade(nav1, nav2) {
@@ -128,10 +179,11 @@ const landingPage = {
         }
     },
 
-    start: function () {
+    start: async function () {
+        await this.render();
+        await this.itemsSliderStart();
         this.menuStart();
         this.coverSliderStart();
-        this.itemsSliderStart();
     },
 };
 

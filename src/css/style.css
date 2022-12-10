@@ -396,7 +396,7 @@ h6 {
   padding: 30px calc(8.3333333333% - 20px);
   min-height: 500px;
   background-color: rgb(68, 0, 0);
-  color: white;
+  color: #fefaf0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -409,6 +409,7 @@ h6 {
   margin: 0px;
   min-height: 600px;
   padding: 0px 50px;
+  background-color: black;
   background-image: url(https://player.vimeo.com/video/764240066?dnt=1&id=764240066&autopause=0&transparent=0&autoplay=1&loop=1&muted=1&badge=0&byline=0&portrait=0&title=0&background=1);
 }
 
@@ -452,6 +453,10 @@ h6 {
   left: 0px;
   right: 0px;
   bottom: 0px;
+}
+
+.banner-end .banner__overlay {
+  background-color: #1a1a1a;
 }
 
 .banner__video {
@@ -498,7 +503,7 @@ h6 {
   margin: 0px;
   padding: 0px;
   min-height: fit-content;
-  background-color: white;
+  background-color: #fefaf0;
 }
 
 .banner-event .banner__border {
@@ -700,27 +705,27 @@ h6 {
   width: 100%;
   margin: 20px 0px;
   display: flex;
-  transition: transform 0.5s linear;
 }
 
-.items-slider__item {
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  width: 275px;
-  height: 440px;
+.items-slider__list {
+  display: flex;
+  transition: transform 0.2s cubic-bezier(0.12, 0, 0.39, 0);
 }
 
 .items-slider__link {
   display: inline-block;
   padding: 15px;
-  width: 100%;
-  height: 100%;
+  width: 275px;
+  height: 440px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 .items-slider__pic {
   margin-top: 15px;
-  background-color: red;
   width: 100%;
   height: 243px;
+  background-position: center;
+  background-size: contain;
 }
 
 .items-slider__name {
@@ -730,6 +735,8 @@ h6 {
   line-height: 1.5rem;
   letter-spacing: 1px;
   font-weight: 400;
+  max-height: 50px;
+  overflow: hidden;
 }
 
 .items-slider__price {
@@ -892,8 +899,13 @@ h6 {
   font-style: italic;
   text-align: center;
   padding: 10px 0px;
-  width: 80%;
+  width: 85%;
   line-height: normal;
+  transition: all 0.2s linear;
+}
+
+.showcase-item__name:hover {
+  color: #a06d33;
 }
 
 .showcase-item__prices {
@@ -902,6 +914,10 @@ h6 {
   font-weight: 400;
   line-height: 1.6rem;
   margin-bottom: 10px;
+}
+
+.price--current + .price--old {
+  margin-left: 10px;
 }
 
 .price--old {
@@ -915,10 +931,17 @@ h6 {
   font-family: "Barlow Condensed", sans-serif;
   font-weight: 700;
   font-size: 1.25rem;
-  background-color: white;
+  background-color: #fefbf0;
   color: black;
   line-height: normal;
   margin-bottom: 40px;
+  cursor: pointer;
+  transition: all 0.2s linear;
+}
+
+.showcase-item_btn:hover {
+  background-color: black;
+  color: white;
 }
 
 .statistic-container {
@@ -955,9 +978,204 @@ div.stat + div.stat {
   margin: 10px auto;
 }
 
+.main-content {
+  background-color: #fefaf0;
+}
+
 .double-section__container {
   background-color: #171007;
   color: #fefaf0;
+}
+
+.footer {
+  background-image: url(https://cdn.shopify.com/s/files/1/0003/2725/4068/t/161/assets/footer-texture-196x.jpg?v=133104504405972167811659465805);
+  color: #d9ccb5;
+  padding-bottom: 40px;
+}
+
+.footer-socials__container {
+  height: 60px;
+  background-image: url(https://cdn.shopify.com/s/files/1/0003/2725/4068/t/161/assets/footer-social-texture-2x.jpg?v=89872037106337253761659465804);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "SS Nickson One", sans-serif;
+  font-size: 1.4rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.footer-socials__links {
+  display: flex;
+  fill: #d9ccb5;
+  align-items: center;
+  justify-content: center;
+  margin: 0px 40px;
+}
+
+.footer-socials__link {
+  padding-top: 5px;
+  margin: 0px 10px;
+  cursor: pointer;
+}
+
+.footer-socials__link:hover {
+  fill: white;
+}
+
+.footer-socials__link svg {
+  width: 22px;
+  max-height: 22px;
+}
+
+.footer__container {
+  font-family: "Barlow Condensed", sans-serif;
+  display: flex;
+  max-width: 100%;
+  margin: 70px 305px 45px;
+  text-transform: uppercase;
+}
+
+.footer-email__container {
+  margin: 0px 40px;
+  max-width: 300px;
+}
+
+.footer-email__title {
+  margin: 20px 0px;
+  font-family: "SS Nickson One", sans-serif;
+  font-weight: 400;
+  letter-spacing: 1px;
+  font-size: 2.25rem;
+  line-height: 2.25rem;
+}
+
+.footer-email__form {
+  height: fit-content;
+  display: flex;
+  position: relative;
+}
+
+.footer-email__input {
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  border-bottom: 1px solid #453929;
+  flex-grow: 1;
+  color: inherit;
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  line-height: 1.3rem;
+  padding: 0.5rem 1rem;
+}
+
+.footer-email__input:focus {
+  outline: none;
+}
+
+.footer-email__input:focus + label[for=footer-email__input] {
+  bottom: 40px;
+  font-size: 0.8rem;
+}
+
+label[for=footer-email__input] {
+  position: absolute;
+  bottom: 20px;
+  left: 15px;
+  font-size: 1.1rem;
+  line-height: 1.3rem;
+  transition: all 0.2s linear;
+}
+
+.footer-email__submit {
+  flex-grow: 1;
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  color: inherit;
+  text-transform: uppercase;
+  font-size: 1.25rem;
+  padding: 15px;
+  border: 1px solid #453929;
+  font-weight: bold;
+  letter-spacing: 1px;
+  transition: all 0.2s linear;
+}
+
+.footer-email__submit:hover {
+  background-color: #fefaf0;
+  color: #453929;
+}
+
+.footer__list {
+  border-left: 1px solid #453929;
+  border-right: 1px solid #453929;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 20px 40px;
+}
+
+.footer-list__title {
+  letter-spacing: 0.5px;
+  font-size: 1.5rem;
+  margin: 0px;
+}
+
+.footer__items {
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+.footer__item {
+  margin: 18px 0px;
+  transition: color 0.2s linear;
+}
+
+.footer__item:hover {
+  color: white;
+}
+
+.footer-contacts__container {
+  background-image: url(https://cdn.shopify.com/s/files/1/0003/2725/4068/t/161/assets/footer-page-bg.jpg?v=64631400759479925501659465803);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  margin-left: 60px;
+}
+
+.footer-contacts__container h1 {
+  font-family: "SS Nickson One", sans-serif;
+  font-size: 2.35rem;
+  letter-spacing: 1px;
+  font-weight: 400;
+  text-align: center;
+  margin: 0px;
+}
+
+.footer-contacts__container span {
+  margin: 6px;
+  box-sizing: border-box;
+  line-height: 1.2rem;
+}
+
+.footer-contacts__container hr {
+  width: 80%;
+  margin: 20px auto;
+  border-bottom: 1px solid #453929;
+}
+
+.footer-contacts__container br {
+  margin: 15px auto;
+}
+
+.footer-copyrights {
+  font-family: "Times New Roman", Times, serif;
+  text-align: center;
+  letter-spacing: 1px;
 }
 
 /*# sourceMappingURL=style.css.map */
