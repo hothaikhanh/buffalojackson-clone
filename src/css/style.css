@@ -45,6 +45,7 @@ h6 {
 }
 
 .header__container {
+  position: relative;
   background-image: url("/src/assets/img/nav-bg.webp");
   width: 100%;
   height: auto;
@@ -93,14 +94,6 @@ h6 {
   font-weight: 700;
   letter-spacing: 1px;
   line-height: 1.125rem;
-}
-.header__dropdown ::before {
-  content: "";
-  display: inline-block;
-  background-color: red;
-  width: 100%;
-  height: 10px;
-  margin-bottom: -40px;
 }
 
 .header__item {
@@ -161,9 +154,53 @@ h6 {
   object-fit: contain;
 }
 
+.header-fixed__container {
+  width: 100%;
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  background-image: url("/src/assets/img/nav-bg.webp");
+  height: 85px;
+  color: #d9ccb5;
+  top: -85px;
+}
+
+.header-fixed--active {
+  transition: all 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
+  top: 0px;
+}
+
+.header-fixed--left {
+  width: 33.3333333333%;
+  margin-left: 40px;
+  display: flex;
+}
+
+.header-fixed--center {
+  width: 33.3333333333%;
+}
+
+.header-fixed--center .header__center--logo-img {
+  width: 150px;
+  margin: auto;
+  object-fit: contain;
+}
+
+.header-fixed--right {
+  width: 33.3333333333%;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 40px;
+}
+
 .dropdown__container {
   position: absolute;
   width: 100%;
+}
+
+.dropdown__container.dropdown-fixed {
+  top: 85px;
+  position: fixed;
 }
 
 .dropdown__menu {
@@ -579,6 +616,54 @@ h6 {
   cursor: pointer;
 }
 
+.category-DUFFLES .category__pic {
+  background-image: url(/src/assets/img/catergory-1.webp);
+}
+
+.category-DUFFLES .category__pic:hover {
+  background-image: url(/src/assets/img/catergory-1-alt.webp);
+}
+
+.category-MESSENGERS .category__pic {
+  background-image: url(/src/assets/img/catergory-2.webp);
+}
+
+.category-MESSENGERS .category__pic:hover {
+  background-image: url(/src/assets/img/catergory-2-alt.webp);
+}
+
+.category-BRIEFCASES .category__pic {
+  background-image: url(/src/assets/img/catergory-3.webp);
+}
+
+.category-BRIEFCASES .category__pic:hover {
+  background-image: url(/src/assets/img/catergory-3-alt.webp);
+}
+
+.category-BACKPACKS .category__pic {
+  background-image: url(/src/assets/img/catergory-4.webp);
+}
+
+.category-BACKPACKS .category__pic:hover {
+  background-image: url(/src/assets/img/catergory-4-alt.webp);
+}
+
+.category-WALLETS .category__pic {
+  background-image: url(/src/assets/img/catergory-5.webp);
+}
+
+.category-WALLETS .category__pic:hover {
+  background-image: url(/src/assets/img/catergory-5-alt.webp);
+}
+
+.category-JACKETS .category__pic {
+  background-image: url(/src/assets/img/catergory-6.webp);
+}
+
+.category-JACKETS .category__pic:hover {
+  background-image: url(/src/assets/img/catergory-6-alt.webp);
+}
+
 .category__name {
   padding: 10px 0px;
   margin-top: 20px;
@@ -976,6 +1061,96 @@ div.stat + div.stat {
   font-weight: 400;
   line-height: normal;
   margin: 10px auto;
+}
+
+.cart__container {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+  height: 100vh;
+  top: 0px;
+  left: 0px;
+}
+
+.cart--active.cart__container {
+  display: block;
+}
+
+.cart--active > .cart__overlay {
+  opacity: 1;
+}
+
+.cart--active > .cart__menu {
+  right: 0px;
+}
+
+.cart__overlay {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  transition: opacity 0.2s linear;
+}
+
+.cart__menu {
+  position: absolute;
+  right: -400px;
+  top: 0px;
+  height: 100%;
+  width: 400px;
+  background-color: #fefbf0;
+  transition: right 0.2s linear;
+}
+
+.cart__header {
+  display: flex;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 20px 0px;
+  margin: 0px 20px;
+  justify-content: space-between;
+}
+
+.cart__exit {
+  height: 22px;
+  cursor: pointer;
+  width: 50px;
+}
+
+.cart__info {
+  font-size: 1.1rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+.cart__content {
+  padding: 40px 0px 0px;
+}
+
+.cart-empty__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.cart-empty__ms {
+  font-family: "SS Nickson One", sans-serif;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 400;
+  margin-bottom: 30px;
+}
+
+.cart-empty__btn {
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 1px;
+  background-color: #171007;
+  color: #fefbf0;
+  padding: 15px 115px;
+  cursor: pointer;
 }
 
 .main-content {

@@ -22,7 +22,7 @@
 
 <body>
     <header class="header">
-
+        <!-- HEADER-STATIC -->
         <div class="header__container">
 
             <!-- HEADER - LEFT -->
@@ -121,6 +121,42 @@
             <!-- HEADER-RIGHT -->
 
         </div>
+        <!-- HEADER-STATIC -->
+
+        <!-- HEADER-FIXED -->
+        <div class="header-fixed__container">
+            <div class="header-fixed--left">
+                <a href="#" data-headerID="0" class="header__dropdown dropdown--jackets "> leather jackets</a>
+                <a href="#" data-headerID="1" class="header__dropdown dropdown--goods"> leather goods</a>
+                <a href="#" data-headerID="2" class="header__dropdown dropdown--apparel"> apparel</a>
+                <a href="#" data-headerID="3" class="header__dropdown dropdown--discover"> discover</a>
+            </div>
+
+            <div class="header-fixed--center">
+                <div class="header__center--logo-container">
+                    <a class="header__center--logo-link" href="#">
+                        <img class="header__center--logo-img" src="/src/assets/img/Buffalo_Jackson_Logo.avif"></img>
+                    </a>
+                </div>
+            </div>
+
+            <div class="header-fixed--right">
+                <form class="header__search">
+                    <input class="search__input" type="text" placeholder="Search">
+                    <div class="search__toggle">
+                        <svg class="Icon" width="14px" height="18px" viewBox="0 0 1024 1024" version="1.1"
+                            style="width: 1em;">
+                            <g fill="currentColor">
+                                <path
+                                    d="M825.25 589.617c107.76-107.76 107.76-283.097 0-390.857-107.785-107.785-283.12-107.785-390.881-0.024s-107.76 283.097 0.024 390.881c107.76 107.76 283.097 107.76 390.857 0zM350.943 115.311c153.764-153.764 403.967-153.74 557.731 0.024s153.764 403.942 0 557.706c-145.492 145.492-377.223 153.12-531.988 23.24l-26.386 26.386c0 0-33.060 32.87-42.070 93.364l-0.072-0.024c-2.646 18.235-10.869 35.849-24.908 49.888l-132.192 132.192c-34.562 34.562-90.6 34.538-125.137 0-34.562-34.562-34.562-90.575 0-125.137l132.192-132.192c14.040-14.040 31.63-22.286 49.864-24.933l-0.024-0.072c60.494-9.010 93.364-42.070 93.364-42.070l26.386-26.386c-129.88-154.765-122.253-386.496 23.24-531.988z">
+                                </path>
+                            </g>
+                        </svg>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- HEADER-FIXED -->
 
         <!-- DROP DOWN MENU -->
         <div class="dropdown__container">
@@ -305,7 +341,7 @@
 
 
     <main class="main-content">
-
+        <!-- //////COVER SLIDER/////// -->
         <section class="content-wrapper">
             <div class="cover-slider">
                 <div class="slider__nav slider__nav--left">
@@ -421,42 +457,37 @@
                 </div>
             </div>
         </section>
+        <!-- //////COVER SLIDER/////// -->
 
+        <!-- //////CATERGORIES/////// -->
         <section class="content-wrapper">
 
             <div class="categories__container">
                 <ul class="categories__list">
-                    <li data-categoryID="0" class="category">
-                        <div class="category__pic" style="background-image: url(/src/assets/img/catergory-1.webp)">
-                        </div>
+                    <li class="category category-DUFFLES">
+                        <div class="category__pic"></div>
                         <div class="category__name">DUFFLES</div>
                     </li>
-                    <li data-categoryID="1" class="category">
-                        <div class="category__pic" style="background-image: url(/src/assets/img/catergory-2.webp)">
-                        </div>
+                    <li class="category category-MESSENGERS">
+                        <div class="category__pic"></div>
                         <div class="category__name">MESSENGERS</div>
                     </li>
-                    <li data-categoryID="2" class="category">
-                        <div class="category__pic" style="background-image: url(/src/assets/img/catergory-3.webp)">
-                        </div>
+                    <li class="category category-BRIEFCASES">
+                        <div class="category__pic"></div>
                         <div class="category__name">BRIEFCASES</div>
                     </li>
-                    <li data-categoryID="3" class="category">
-                        <div class="category__pic" style="background-image: url(/src/assets/img/catergory-4.webp)">
-                        </div>
+                    <li class="category category-BACKPACKS">
+                        <div class="category__pic"></div>
                         <div class="category__name">BACKPACKS</div>
                     </li>
-                    <li data-categoryID="4" class="category">
-                        <div class="category__pic" style="background-image: url(/src/assets/img/catergory-5.webp)">
-                        </div>
+                    <li class="category category-WALLETS">
+                        <div class="category__pic"></div>
                         <div class="category__name">WALLETS</div>
                     </li>
-                    <li data-categoryID="5" class="category">
-                        <div class="category__pic" style="background-image: url(/src/assets/img/catergory-6.webp)">
-                        </div>
+                    <li class="category category-JACKETS">
+                        <div class="category__pic"></div>
                         <div class="category__name">LEATHER JACKETS</div>
                     </li>
-
                 </ul>
             </div>
 
@@ -495,7 +526,9 @@
                 </a>
             </div>
         </section>
+        <!-- //////CATERGORIES/////// -->
 
+        <!-- //////EVENT BANNER/////// -->
         <section class="content-wrapper">
             <div class="banner__container banner-event">
                 <div class="banner__border">
@@ -510,6 +543,7 @@
                 </div>
             </div>
         </section>
+        <!-- //////EVENT BANNER/////// -->
 
         <!-- //////TRENDING/////// -->
         <section class="content-wrapper">
@@ -634,7 +668,6 @@
             </div>
         </section>
         <!-- //////SHOWCASE1/////// -->
-
 
         <!-- //////SUGGESTIONS/////// -->
         <section class="content-wrapper">
@@ -994,6 +1027,42 @@
             </div>
         </section>
         <!-- //////VIDEO BANNER/////// -->
+
+        <section class="content-wrapper">
+            <div class="cart__container ">
+                <div class="cart__overlay"></div>
+                <div class="cart__menu">
+                    <div class="cart__header">
+                        <div class="cart__exit">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" height="22px">
+                                <path
+                                    d="M342.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L274.7 256 105.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z" />
+                            </svg>
+                        </div>
+                        <div class="cart__info">
+                            <svg class="Icon" width="12px" height="12px" viewBox="0 0 996 1024" version="1.1"
+                                style="width: 0.973em;">
+                                <g fill="currentColor">
+                                    <path
+                                        d="M797.206 385.424h-87.072v-84.672c0-117.764-94.865-213.17-211.982-213.17-117.050 0-211.982 95.447-211.982 213.17v84.672h-87.072v-84.672c0-166.102 133.923-300.752 299.053-300.752 165.203 0 299.053 134.616 299.053 300.752v84.672z M911.547 1021.942h-827.030c-50.518 0-89.776-44.14-83.947-94.464l58.713-509.755c4.839-42.822 40.929-75.117 83.852-75.117h709.689c42.925 0 79 32.223 83.948 75.028l58.677 509.91c5.715 50.291-33.444 94.399-83.901 94.399zM850.499 430.031h-704.933l-58.107 504.486h821.093l-58.054-504.486z">
+                                    </path>
+                                </g>
+                            </svg>
+                            CART (<span class="cart__counter">0</span>)
+                        </div>
+                    </div>
+
+                    <div class="cart__content">
+                        <div class="cart-empty__container">
+                            <p class="cart-empty__ms">Your Cart is Empty</p>
+                            <btn class="cart-empty__btn">Continue Shopping</btn>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
 
     </main>
 

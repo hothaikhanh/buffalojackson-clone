@@ -7,6 +7,21 @@ async function getJSON() {
     landingPage.ITEMS = json;
 }
 
+function debounce(fn, ms) {
+    let timer;
+
+    return function () {
+        const args = arguments;
+        const context = this;
+
+        if (timer) clearTimeout(timer);
+
+        timer = setTimeout(() => {
+            fn.apply(context, args);
+        }, ms);
+    };
+}
+
 const landingPage = {
     ITEMS: [],
 
@@ -55,6 +70,9 @@ const landingPage = {
     menuStart: function () {
         let menuBtns = $$(".header__dropdown");
         let menuDropdown = $$(".dropdown__menu");
+        let fixedHeader = $(".header-fixed__container");
+        let staticHeader = $(".header__container");
+        let dropdownHeader = $(".dropdown__container");
         let activeMenus = [];
         let onMenu = false;
         let onBtn = false;
@@ -88,6 +106,24 @@ const landingPage = {
                 checkBrowsing();
             });
         });
+
+        window.addEventListener(
+            "scroll",
+            debounce((e) => {
+                console.log("scroll");
+                if (activeMenus.length > 0) {
+                    activeMenus.pop().classList.remove("dropdown--active");
+                }
+
+                if (window.scrollY > 200) {
+                    fixedHeader.classList.add("header-fixed--active");
+                    dropdownHeader.classList.add("dropdown-fixed");
+                } else {
+                    fixedHeader.classList.remove("header-fixed--active");
+                    dropdownHeader.classList.remove("dropdown-fixed");
+                }
+            }, 100)
+        );
 
         function checkBrowsing() {
             setTimeout(() => {
@@ -179,10 +215,29 @@ const landingPage = {
         }
     },
 
+    cartToggle: function () {
+        let cartContainer = $(".cart__container");
+        let cartOpen = $(".header__cart");
+        let cartClose = $(".cart__exit");
+        let cartContinue = $(".cart-empty__btn");
+
+        cartOpen.addEventListener("click", () => {
+            cartContainer.classList.add("cart--active");
+        });
+
+        cartClose.addEventListener("click", () => {
+            cartContainer.classList.remove("cart--active");
+        });
+
+        cartContinue.addEventListener("click", () => {
+            cartContainer.classList.remove("cart--active");
+        });
+    },
     start: async function () {
         await this.render();
         await this.itemsSliderStart();
         this.menuStart();
+        this.cartToggle();
         this.coverSliderStart();
     },
 };
