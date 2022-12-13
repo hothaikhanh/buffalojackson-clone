@@ -6,10 +6,7 @@
         "name": "Bridger Leather Down Jacket | Light Brown",
         "price_current": "$439.95",
         "price_old": "$489.95",
-        "ratings": 4.5,
-        "isTrending": true,
-        "isSuggested": true,
-        "isViewed": false
+        "ratings": 4.5
     },
     {
         "ID": "0002",
@@ -18,10 +15,7 @@
         "name": "Wesley Wool Jacket | Brown",
         "price_current": "$229.95",
         "price_old": "",
-        "ratings": 5,
-        "isTrending": true,
-        "isSuggested": true,
-        "isViewed": false
+        "ratings": 5
     },
     {
         "ID": "0003",
@@ -30,10 +24,7 @@
         "name": "Legacy Leather Jacket | Brown",
         "price_current": "$489.95",
         "price_old": "",
-        "ratings": 5,
-        "isTrending": true,
-        "isSuggested": false,
-        "isViewed": false
+        "ratings": 5
     },
     {
         "ID": "0004",
@@ -42,10 +33,7 @@
         "name": "Roosevelt Buffalo Leather Pilot Bag | Dark Oak",
         "price_current": "$324.95",
         "price_old": "",
-        "ratings": 5,
-        "isTrending": true,
-        "isSuggested": false,
-        "isViewed": false
+        "ratings": 5
     },
     {
         "ID": "0005",
@@ -54,10 +42,7 @@
         "name": "Roosevelt Buffalo Leather Satchel Messenger Bag | Dark Oak",
         "price_current": "$299.95",
         "price_old": "",
-        "ratings": 5,
-        "isTrending": true,
-        "isSuggested": false,
-        "isViewed": false
+        "ratings": 5
     },
     {
         "ID": "0006",
@@ -66,10 +51,7 @@
         "name": "Roosevelt Buffalo Leather Satchel Messenger Bag - Large | Dark Oak",
         "price_current": "$324.95",
         "price_old": "",
-        "ratings": 5,
-        "isTrending": true,
-        "isSuggested": false,
-        "isViewed": false
+        "ratings": 5
     },
     {
         "ID": "0007",
@@ -78,10 +60,7 @@
         "name": "Driggs Leather Jacket | Brown",
         "price_current": "$489.95",
         "price_old": "",
-        "ratings": 5,
-        "isTrending": true,
-        "isSuggested": false,
-        "isViewed": false
+        "ratings": 5
     },
     {
         "ID": "0008",
@@ -90,10 +69,7 @@
         "name": "Ryder Reserve Bison Leather Briefcase | Brown",
         "price_current": "$449.95",
         "price_old": "$524.95",
-        "ratings": 5,
-        "isTrending": true,
-        "isSuggested": false,
-        "isViewed": false
+        "ratings": 5
     },
     {
         "ID": "0009",
@@ -102,10 +78,7 @@
         "name": "Laramie Waxed Canvas Trucker | Tobacco Tan",
         "price_current": "$199.95",
         "price_old": "",
-        "ratings": 4.5,
-        "isTrending": true,
-        "isSuggested": false,
-        "isViewed": false
+        "ratings": 4.5
     },
     {
         "ID": "0010",
@@ -114,9 +87,6 @@
         "name": "Driggs Leather Jacket | Cognac Brown",
         "price_current": "$489.95",
         "price_old": "",
-        "ratings": 4.5,
-        "isTrending": true,
-        "isSuggested": false,
-        "isViewed": false
+        "ratings": 4.5
     }
 ]
