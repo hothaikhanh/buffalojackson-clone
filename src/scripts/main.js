@@ -37,10 +37,10 @@ const landingPage = {
     getData: async function () {
         await getJSON();
         this.ITEMS_LENGTH = this.ITEMS.length;
-        this.renderSlider("all");
+        this.renderSliderItems("all");
     },
 
-    renderSlider: function (...args) {
+    renderSliderItems: function (...args) {
         let defaultListWidth = $(".item-slider__wrapper").clientWidth;
 
         let trendingList = $(".trending-list");
@@ -240,7 +240,7 @@ const landingPage = {
         }
     },
 
-    renderItemsSlider: function () {
+    renderSliderContainer: function () {
         let slidersList = $$(".item-slider__wrapper");
         for (let i = 0; i < slidersList.length; i++) {
             let leftNav = slidersList[i].children[1];
@@ -275,23 +275,32 @@ const landingPage = {
         let cartClose = $(".cart__exit");
         let cartContinue = $(".cart-empty__btn");
 
+        //render cart sidebar when user open cart
         cartOpen.addEventListener("click", () => {
-            this.renderCart();
+            this.renderCartContainer();
+            this.renderCartItem();
+            this.updateCartCounter();
+
             cartContainer.classList.add("cart--active");
         });
 
+        //close cart sidebar when user close cart
         cartClose.addEventListener("click", () => {
+            this.updateCartCounter();
+
             cartContainer.classList.remove("cart--active");
         });
 
+        //close cart sidebar when user clicks continue shopping button
         cartContinue.addEventListener("click", () => {
+            this.updateCartCounter();
+
             cartContainer.classList.remove("cart--active");
         });
     },
 
     addToCart: function () {
         let addToCart_btns = $$(".items-slider__cart-btn");
-        let cartCounterDisplay = $$(".cart__counter")[0];
 
         //CREATE EVENT LISTENERS FOR ADD TO CART BUTTON IN EACH ITEM//
         for (let i = 0; i < addToCart_btns.length; i++) {
@@ -301,25 +310,27 @@ const landingPage = {
                 this.ITEMS_VIEWED.add(addedItem.ID);
                 this.ITEMS_CART.add(addedItem.ID);
 
-                //render cart count number to view
-                cartCounterDisplay.innerHTML = landingPage.ITEMS_CART.size;
+                addedItem.quantity_incart++;
 
-                this.renderSlider("viewed");
+                //render cart count number to view
+                this.updateCartCounter();
+
+                this.renderSliderItems("viewed");
                 // console.log(addedItem);
             });
         }
     },
 
-    renderCart: function () {
+    renderCartItem: function () {
         let CART = Array.from(this.ITEMS_CART);
         let cartContainer = $(".cart-items__list");
 
-        let priceTotal = 0;
+        let totalItemPrice = 0;
         let cart_html = "";
 
         CART.map((itemID, index) => {
             let curItem = this.ITEMS.find((x) => x.ID == itemID);
-            const itemIndex = String(curItem.ID);
+            let itemPrice = curItem.price_current * curItem.quantity_incart;
 
             let item_html = `<li class="cart__item">
                 <div class="cart__item-pic"
@@ -338,36 +349,82 @@ const landingPage = {
                     </ul>
 
                     <div class="cart__item-quantity-box">
-                        <div class="cart__item-quantity-btn quantity-btn--minus">-</div>
-                        <span class="cart__item-quantity-display"></span>
-                        <div class="cart__item-quantity-btn quantity-btn--plus">+</div>
+                        <div class="cart__item-quantity-btn quantity-btn--minus"
+                            onclick=landingPage.updateCartItemQuantity("${curItem.ID}","minus")>-</div>
+
+                        <span class="cart__item-quantity-display">${curItem.quantity_incart}</span>
+
+                        <div class="cart__item-quantity-btn quantity-btn--plus"
+                            onclick=landingPage.updateCartItemQuantity("${curItem.ID}","add")>+</div>
                     </div>
                 </div>
 
-                <div class="cart__item-price">${curItem.price_current}</div>
-                <div class="cart__item-remove" onclick=landingPage.removeCartItem("${itemIndex}")>X</div>
+                <div class="cart__item-price">${itemPrice}</div>
+                <div class="cart__item-remove" 
+                    onclick=landingPage.removeCartItem("${curItem.ID}")
+                >X</div>
             </li>`;
 
-            priceTotal += parseFloat(curItem.price_current.slice(1));
+            totalItemPrice += itemPrice;
             cart_html += item_html;
         });
 
         let total_html = `<div class="cart__total">
                                 <span>subtotal</span>
-                                <span>$${priceTotal}</span>
+                                <span>$${totalItemPrice}</span>
                             </div>`;
 
         cartContainer.innerHTML = cart_html + total_html;
     },
 
-    removeCartItem(ID) {
+    removeCartItem: function (ID) {
         this.ITEMS_CART.delete(ID);
-        this.renderCart();
+        this.renderCartItem();
+        this.renderCartContainer();
+        this.updateCartCounter();
+    },
+
+    renderCartContainer: function () {
+        let cartItemsContainer = $(".cart-items__container");
+        let cartEmptyContainer = $(".cart-empty__container");
+
+        if (this.ITEMS_CART.size > 0) {
+            cartItemsContainer.classList.add("cart--active");
+            cartEmptyContainer.classList.remove("cart--active");
+        } else {
+            cartItemsContainer.classList.remove("cart--active");
+            cartEmptyContainer.classList.add("cart--active");
+        }
+    },
+
+    updateCartCounter: function () {
+        let cartCounterDisplay = $$(".cart__counter");
+        for (let i = 0; i < cartCounterDisplay.length; i++) {
+            cartCounterDisplay[i].innerHTML = this.ITEMS_CART.size;
+        }
+    },
+
+    updateCartItemQuantity: function (itemID, type) {
+        let curItem = this.ITEMS.find((x) => x.ID == itemID);
+
+        switch (type) {
+            case "add":
+                curItem.quantity_incart++;
+                this.renderCartItem();
+
+                break;
+            case "minus":
+                if (curItem.quantity_incart > 0) {
+                    curItem.quantity_incart--;
+                    this.renderCartItem();
+                }
+                break;
+        }
     },
 
     start: async function () {
         await this.getData();
-        await this.renderItemsSlider();
+        await this.renderSliderContainer();
         await this.addToCart();
         this.renderMenu();
         this.toggleCart();

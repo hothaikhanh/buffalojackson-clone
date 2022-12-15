@@ -1173,6 +1173,10 @@ div.stat + div.stat {
   align-items: center;
 }
 
+.cart-empty__container.cart--active {
+  display: flex;
+}
+
 .cart-empty__ms {
   font-family: "SS Nickson One", sans-serif;
   font-size: 1.2rem;
@@ -1194,9 +1198,13 @@ div.stat + div.stat {
 
 .cart-items__container {
   padding: 0px 20px;
-  display: flex;
+  display: none;
   flex-direction: column;
   justify-content: center;
+}
+
+.cart-items__container.cart--active {
+  display: flex;
 }
 
 .cart-items__list {

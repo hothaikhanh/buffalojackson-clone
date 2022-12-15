@@ -4,89 +4,99 @@
         "link": "https://buffalojackson.com/products/leather-puffer-down-jacket-light-brown?lssrc=trending&lshst=home",
         "picture": "https://cdn.shopify.com/s/files/1/0003/2725/4068/products/bridger-down-leather-jacket-lifestyle_275x275.jpg?v=1668518986",
         "name": "Bridger Leather Down Jacket | Light Brown",
-        "price_current": "$439.95",
-        "price_old": "$489.95",
-        "ratings": 4.5
+        "price_current": 439.95,
+        "price_old": 489.95,
+        "ratings": 4.5,
+        "quantity_incart": 0
     },
     {
         "ID": "0002",
         "link": "https://buffalojackson.com/products/wesley-mens-wool-jacket?lssrc=trending&lshst=home",
         "picture": "https://cdn.shopify.com/s/files/1/0003/2725/4068/products/mens-wesley-wool-jacket-lifestyle-_2-of-4_275x275.jpg?v=1663862458",
         "name": "Wesley Wool Jacket | Brown",
-        "price_current": "$229.95",
+        "price_current": 229.95,
         "price_old": "",
-        "ratings": 5
+        "ratings": 5,
+        "quantity_incart": 0
     },
     {
         "ID": "0003",
         "link": "https://buffalojackson.com/products/mens-leather-flight-jacket?lssrc=trending&lshst=home",
         "picture": "https://cdn.shopify.com/s/files/1/0003/2725/4068/products/legacy-leather-jacket-brown-_1-of-9_275x275.jpg?v=1634060705",
         "name": "Legacy Leather Jacket | Brown",
-        "price_current": "$489.95",
+        "price_current": 489.95,
         "price_old": "",
-        "ratings": 5
+        "ratings": 5,
+        "quantity_incart": 0
     },
     {
         "ID": "0004",
         "link": "https://buffalojackson.com/products/leather-flight-bag-roosevelt-water-buffalo-dark-oak?lssrc=trending&lshst=home",
         "picture": "https://cdn.shopify.com/s/files/1/0003/2725/4068/products/Roosevelt_Buffalo_Leather_Pilot_Bag_Dark_Oak_1-copy_275x275.jpg?v=1571710379",
         "name": "Roosevelt Buffalo Leather Pilot Bag | Dark Oak",
-        "price_current": "$324.95",
+        "price_current": 324.95,
         "price_old": "",
-        "ratings": 5
+        "ratings": 5,
+        "quantity_incart": 0
     },
     {
         "ID": "0005",
         "link": "https://buffalojackson.com/products/leather-satchel-for-men-dark-walnut-leather?lssrc=trending&lshst=home",
         "picture": "https://cdn.shopify.com/s/files/1/0003/2725/4068/products/Roosevelt_Buffalo_Leather_Satchel_Messenger_Bag_Dark_Oak_1-copy_275x275.jpg?v=1636051882",
         "name": "Roosevelt Buffalo Leather Satchel Messenger Bag | Dark Oak",
-        "price_current": "$299.95",
+        "price_current": 299.95,
         "price_old": "",
-        "ratings": 5
+        "ratings": 5,
+        "quantity_incart": 0
     },
     {
         "ID": "0006",
         "link": "https://buffalojackson.com/products/large-messenger-bag-roosevelt-dark-oak?lssrc=trending&lshst=home",
         "picture": "https://cdn.shopify.com/s/files/1/0003/2725/4068/products/Roosevelt_Buffalo_Leather_Satchel_Messenger_Bag_Large_Dark_Oak_1-copy_275x275.jpg?v=1571710380",
         "name": "Roosevelt Buffalo Leather Satchel Messenger Bag - Large | Dark Oak",
-        "price_current": "$324.95",
+        "price_current": 324.95,
         "price_old": "",
-        "ratings": 5
+        "ratings": 5,
+        "quantity_incart": 0
     },
     {
         "ID": "0007",
         "link": "https://buffalojackson.com/products/mens-leather-jacket-moto-brown?lssrc=trending&lshst=home",
         "picture": "https://cdn.shopify.com/s/files/1/0003/2725/4068/products/driggs-leather-jacket-brown-_5-of-10_275x275.jpg?v=1666966267",
         "name": "Driggs Leather Jacket | Brown",
-        "price_current": "$489.95",
+        "price_current": 489.95,
         "price_old": "",
-        "ratings": 5
+        "ratings": 5,
+        "quantity_incart": 0
     },
     {
         "ID": "0008",
         "link": "https://buffalojackson.com/products/ryder-reserve-bison-leather-briefcase-bag-brown?lssrc=trending&lshst=home",
         "picture": "https://cdn.shopify.com/s/files/1/0003/2725/4068/products/Ryder_Reserve_Bison_Leather_Briefcase_Brown_1_275x275.jpg?v=1571710380",
         "name": "Ryder Reserve Bison Leather Briefcase | Brown",
-        "price_current": "$449.95",
-        "price_old": "$524.95",
-        "ratings": 5
+        "price_current": 449.95,
+        "price_old": 524.95,
+        "ratings": 5,
+        "quantity_incart": 0
     },
     {
         "ID": "0009",
         "link": "https://buffalojackson.com/products/laramie-waxed-canvas-trucker-tobacco-tan?lssrc=trending&lshst=home",
         "picture": "https://cdn.shopify.com/s/files/1/0003/2725/4068/products/waxed-canvas-rugged-jacket-laramie-5_275x275.jpg?v=1643818495",
         "name": "Laramie Waxed Canvas Trucker | Tobacco Tan",
-        "price_current": "$199.95",
+        "price_current": 199.95,
         "price_old": "",
-        "ratings": 4.5
+        "ratings": 4.5,
+        "quantity_incart": 0
     },
     {
         "ID": "0010",
         "link": "https://buffalojackson.com/products/leather-denim-jacket-brown?lssrc=trending&lshst=home",
         "picture": "https://cdn.shopify.com/s/files/1/0003/2725/4068/products/driggs-leather-jacket-brown-34_84aeadd1-3b56-4ff1-8b7f-9918d4d60bdc_275x275.jpg?v=1652455901",
         "name": "Driggs Leather Jacket | Cognac Brown",
-        "price_current": "$489.95",
+        "price_current": 489.95,
         "price_old": "",
-        "ratings": 4.5
+        "ratings": 4.5,
+        "quantity_incart": 0
     }
 ]
