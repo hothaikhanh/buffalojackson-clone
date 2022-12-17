@@ -37,6 +37,12 @@ const landingPage = {
     getData: async function () {
         await getJSON();
         this.ITEMS_LENGTH = this.ITEMS.length;
+
+        for (let i = 0; i < this.ITEMS_LENGTH; i++) {
+            this.ITEMS[i]["quantity_incart"] = 0;
+            this.ITEMS[i]["default_size"] = this.ITEMS[i].sizes[0];
+        }
+
         this.renderSliderItems("all");
     },
 
@@ -75,7 +81,7 @@ const landingPage = {
                     <div class="items-slider__name">${item.name}</div>
                     <div class="items-slider__price">
                         <span class="price--old">${item.price_old}</span>
-                        <span class="price--current">${item.price_current}</span>
+                        <span class="price--current">$${item.price_current}</span>
                     </div>
                     <div class="items-slider__ratings">${starSet}</div>
                 </a>
@@ -324,6 +330,7 @@ const landingPage = {
     renderCartItem: function () {
         let CART = Array.from(this.ITEMS_CART);
         let cartContainer = $(".cart-items__list");
+        let cartTotalPrice = $(".cart__total-price");
 
         let totalItemPrice = 0;
         let cart_html = "";
@@ -331,6 +338,17 @@ const landingPage = {
         CART.map((itemID, index) => {
             let curItem = this.ITEMS.find((x) => x.ID == itemID);
             let itemPrice = curItem.price_current * curItem.quantity_incart;
+            let item_sizes = "";
+
+            curItem.sizes.forEach((size, index) => {
+                let radioBtn = `
+                <input type="radio" id="${curItem.ID}-size${size}" name="${curItem.ID}" class="cart__item-size-option size-option--${size}">
+                            <label for="${curItem.ID}-size${size}" onclick = 
+                                landingPage.updateCartItemSize("${curItem.ID}","${size}")
+                            > ${size} </label>
+                `;
+                item_sizes += radioBtn;
+            });
 
             let item_html = `<li class="cart__item">
                 <div class="cart__item-pic"
@@ -340,12 +358,8 @@ const landingPage = {
                 <div class="cart__item-details">
                     <div class="cart__item-name">${curItem.name}</div>
 
-                    <ul class="cart__item-size-box">
-                        <input type="radio" name="${curItem.ID}" class="cart__item-size-option size-option--S">S</input>
-                        <input type="radio" name="${curItem.ID}" class="cart__item-size-option size-option--M">M</input>
-                        <input type="radio" name="${curItem.ID}" class="cart__item-size-option size-option--L">L</input>
-                        <input type="radio" name="${curItem.ID}" class="cart__item-size-option size-option--XL">XL</input>
-                        <input type="radio" name="${curItem.ID}" class="cart__item-size-option size-option--XXL">XXL</input>
+                    <ul data-default-size = "${curItem.default_size}" class="cart__item-size-box">
+                        ${item_sizes}
                     </ul>
 
                     <div class="cart__item-quantity-box">
@@ -359,7 +373,7 @@ const landingPage = {
                     </div>
                 </div>
 
-                <div class="cart__item-price">${itemPrice}</div>
+                <div class="cart__item-price">$${itemPrice.toFixed(2)}</div>
                 <div class="cart__item-remove" 
                     onclick=landingPage.removeCartItem("${curItem.ID}")
                 >X</div>
@@ -369,19 +383,32 @@ const landingPage = {
             cart_html += item_html;
         });
 
-        let total_html = `<div class="cart__total">
-                                <span>subtotal</span>
-                                <span>$${totalItemPrice}</span>
-                            </div>`;
-
-        cartContainer.innerHTML = cart_html + total_html;
+        cartTotalPrice.innerHTML = "$" + totalItemPrice.toFixed(2);
+        cartContainer.innerHTML = cart_html;
+        this.toggleDefaultItemSize();
     },
 
-    removeCartItem: function (ID) {
-        this.ITEMS_CART.delete(ID);
+    removeCartItem: function (itemID) {
+        let curItem = this.ITEMS.find((x) => x.ID == itemID);
+        this.ITEMS_CART.delete(itemID);
         this.renderCartItem();
         this.renderCartContainer();
         this.updateCartCounter();
+        this.updateCartItemSize(itemID, curItem.sizes[0]);
+        curItem.quantity_incart = 0;
+    },
+
+    toggleDefaultItemSize: () => {
+        let sizeOptionBoxes = $$(".cart__item-size-box");
+        for (let i = 0; i < sizeOptionBoxes.length; i++) {
+            let defaultSize = sizeOptionBoxes[i].dataset.defaultSize;
+            sizeOptionBoxes[i].querySelector(".size-option--" + defaultSize).checked = true;
+        }
+    },
+
+    updateCartItemSize: function (itemID, newSize) {
+        let curItem = this.ITEMS.find((x) => x.ID == itemID);
+        curItem.default_size = newSize;
     },
 
     renderCartContainer: function () {
@@ -404,21 +431,25 @@ const landingPage = {
         }
     },
 
-    updateCartItemQuantity: function (itemID, type) {
+    updateCartItemQuantity: function (itemID, action) {
         let curItem = this.ITEMS.find((x) => x.ID == itemID);
 
-        switch (type) {
+        switch (action) {
             case "add":
                 curItem.quantity_incart++;
                 this.renderCartItem();
 
                 break;
             case "minus":
-                if (curItem.quantity_incart > 0) {
+                if (curItem.quantity_incart == 1) {
+                    console.log("no mo");
+                    curItem.quantity_incart--;
+                    this.removeCartItem(itemID);
+                } else if (curItem.quantity_incart > 1) {
+                    console.log("decreasing");
                     curItem.quantity_incart--;
                     this.renderCartItem();
                 }
-                break;
         }
     },
 
