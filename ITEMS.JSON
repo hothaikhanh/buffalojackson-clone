@@ -5,7 +5,7 @@
         "picture": "https://cdn.shopify.com/s/files/1/0003/2725/4068/products/bridger-down-leather-jacket-lifestyle_275x275.jpg?v=1668518986",
         "name": "Bridger Leather Down Jacket | Light Brown",
         "price_current": 439.95,
-        "price_old": 489.95,
+        "price_old": "$489.95",
         "ratings": 4.5,
         "sizes": [
             "S",
@@ -151,6 +151,102 @@
         "price_current": 489.95,
         "price_old": "",
         "ratings": 4.5,
+        "sizes": [
+            "S",
+            "M",
+            "L",
+            "XL",
+            "XXL"
+        ]
+    },
+    {
+        "ID": "0011",
+        "link": "https://buffalojackson.com/products/ryder-reserve-bison-leather-duffle-bag-brown?variant=7954751225908",
+        "picture": "https://cdn.shopify.com/s/files/1/0003/2725/4068/products/Ryder_Reserve_Bison_Leather_Duffle_Brown_4_2000x.jpg?v=1571710381",
+        "name": "Ryder Reserve Bison Leather Travel Duffle Bag | Brown",
+        "price_current": 599.95,
+        "price_old": "",
+        "ratings": 5,
+        "sizes": [
+            "S",
+            "M",
+            "L",
+            "XL",
+            "XXL"
+        ]
+    },
+    {
+        "ID": "0012",
+        "link": "https://buffalojackson.com/products/denver-messenger-full-grain-autumn-brown?variant=9504048087092",
+        "picture": "https://cdn.shopify.com/s/files/1/0003/2725/4068/products/denver_leather_laptop_messenger_bag_autumn_brown-_1-of-6_2000x.jpg?v=1621617492",
+        "name": "Denver Leather Laptop Messenger Bag | Autumn Brown",
+        "price_current": 329.95,
+        "price_old": "",
+        "ratings": 5,
+        "sizes": [
+            "S",
+            "M",
+            "L",
+            "XL",
+            "XXL"
+        ]
+    },
+    {
+        "ID": "0013",
+        "link": "https://buffalojackson.com/products/roosevelt-large-leather-travel-duffle-bag-dark-oak?variant=7954711117876",
+        "picture": "https://cdn.shopify.com/s/files/1/0003/2725/4068/products/Roosevelt_Buffalo_Leather_Travel_Duffle_Bag_Dark_Oak_1-copy_2000x.jpg?v=1602267777",
+        "name": "Roosevelt Buffalo Leather Travel Duffle Bag | Dark Oak",
+        "price_current": 399.95,
+        "price_old": "",
+        "ratings": 5,
+        "sizes": [
+            "S",
+            "M",
+            "L",
+            "XL",
+            "XXL"
+        ]
+    },
+    {
+        "ID": "0014",
+        "link": "https://buffalojackson.com/products/2022-wesley-wool-jacket-gray?variant=39667500318772",
+        "picture": "https://cdn.shopify.com/s/files/1/0003/2725/4068/products/vintage-wesley-wool-jacket-grey-2_2000x.jpg?v=1662684340",
+        "name": "Wesley Wool Jacket | Gray",
+        "price_current": 229.95,
+        "price_old": "",
+        "ratings": 0,
+        "sizes": [
+            "S",
+            "M",
+            "L",
+            "XL",
+            "XXL"
+        ]
+    },
+    {
+        "ID": "0015",
+        "link": "https://buffalojackson.com/products/huntington-quilted-shirt-jac-brown?variant=33101386154036",
+        "picture": "https://cdn.shopify.com/s/files/1/0003/2725/4068/products/huntington-quilted-jac-shirt-bozeman-3_2000x.jpg?v=1663798962",
+        "name": "Huntington Quilted Shirt Jac | Brown",
+        "price_current": 129.95,
+        "price_old": "",
+        "ratings": 5,
+        "sizes": [
+            "S",
+            "M",
+            "L",
+            "XL",
+            "XXL"
+        ]
+    },
+    {
+        "ID": "0016",
+        "link": "https://buffalojackson.com/products/flannel-shirt-barn-red-plaid?variant=39784376008756",
+        "picture": "https://cdn.shopify.com/s/files/1/0003/2725/4068/products/classic-mens-fairbanks-flannel-red-plaid-2_2000x.jpg?v=1662061252",
+        "name": "Fairbanks Flannel Shirt | Red Barn",
+        "price_current": 74.95,
+        "price_old": "",
+        "ratings": 0,
         "sizes": [
             "S",
             "M",

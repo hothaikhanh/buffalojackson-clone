@@ -45,8 +45,12 @@
 .footer__container {
     font-family: var.$default-font;
     display: flex;
-    max-width: 100%;
-    margin: 70px 305px 45px;
+    width: max-content;
+    margin-top: 70px;
+    margin-bottom: 45px;
+    margin-left: auto;
+    margin-right: auto;
+
     text-transform: uppercase;
 }
 

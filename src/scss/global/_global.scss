@@ -7,6 +7,11 @@ html {
     font-family: var.$default-font;
 }
 
+*::selection {
+    background: #fff7b6;
+    color: black;
+}
+
 *,
 *::before,
 *::after {

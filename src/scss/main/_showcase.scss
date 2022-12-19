@@ -60,11 +60,13 @@
     flex-direction: column;
     align-items: center;
     background-color: #f2ebde;
+    justify-content: space-between;
 }
 
 .showcase-item__pic {
-    margin: 10px;
+    padding: 10px;
     display: inline-block;
+    width: 100%;
 }
 .showcase-item__name {
     font-family: var.$text-font;
@@ -99,8 +101,8 @@
     opacity: 0.5;
 }
 
-.showcase-item_btn {
-    padding: 10px 100px;
+.showcase-item__cart-btn {
+    padding: 10px 40px;
     border: 1px solid var.$border-color;
     font-family: var.$default-font;
     font-weight: 700;
@@ -111,9 +113,11 @@
     margin-bottom: 40px;
     cursor: pointer;
     transition: all 0.2s linear;
+    min-width: calc(100% / 12 * 10);
+    text-align: center;
 }
 
-.showcase-item_btn:hover {
+.showcase-item__cart-btn:hover {
     background-color: black;
     color: white;
 }
