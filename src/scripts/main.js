@@ -34,6 +34,10 @@ const landingPage = {
     ITEMS_VIEWED: new Set(),
     ITEMS_CART: new Set(),
 
+    ITEMS_SHOWCASE_1: ["0011", "0012", "0013"],
+    ITEMS_SHOWCASE_2: ["0003", "0001", "0007"],
+    ITEMS_SHOWCASE_3: ["0014", "0015", "0016"],
+
     getData: async function () {
         await getJSON();
         this.ITEMS_LENGTH = this.ITEMS.length;
@@ -43,72 +47,66 @@ const landingPage = {
             this.ITEMS[i]["default_size"] = this.ITEMS[i].sizes[0];
         }
 
-        this.renderSliderItems("all");
+        this.renderItems("all");
     },
 
-    renderSliderItems: function (...args) {
+    renderItems: function (...args) {
         let defaultListWidth = $(".item-slider__wrapper").clientWidth;
 
+        //trending list
         let trendingList = $(".trending-list");
+        //suggestion list
         let suggestsList = $(".suggests-list");
-
+        //viewed list
         let viewedList = $(".viewed-list");
         let viewedList_Wrapper = viewedList.parentElement;
         let viewedList_RightNav = viewedList.nextElementSibling;
+
+        let showcase_1 = $$(".showcase-coll__items-list")[0];
+        let showcase_2 = $$(".showcase-coll__items-list")[1];
+        let showcase_3 = $$(".showcase-coll__items-list")[2];
 
         let HTML = {
             trending: "",
             suggestions: "",
             viewed: "",
+            showcase_1: "",
+            showcase_2: "",
+            showcase_3: "",
         };
 
         this.ITEMS.map((item, index) => {
-            //ADD STAR RATINGS TO ITEMS
-            let starsCount = item.ratings;
-            let starSet = "";
-            for (; starsCount >= 1; starsCount--) {
-                starSet += `<div class="items-slider__star star--full"></div>`;
-            }
-            if (starsCount > 0) {
-                starSet += `<div class="items-slider__star star--half"></div>`;
-            }
-
-            //CREATE HTML CODES FOR ITEMS
-            let item_html = `
-            <li class="items-slider__item ">
-                <a href="${item.link}" class="items-slider__link">
-                    <div class="items-slider__pic" style="background-image: url(${item.picture});"></div>
-                    <div class="items-slider__name">${item.name}</div>
-                    <div class="items-slider__price">
-                        <span class="price--old">${item.price_old}</span>
-                        <span class="price--current">$${item.price_current}</span>
-                    </div>
-                    <div class="items-slider__ratings">${starSet}</div>
-                </a>
-
-                <button data-item-ID = ${item.ID} class="items-slider__cart-btn">
-                    <span>ADD TO CART</span>
-                </button>
-            </li>`;
-
             //CONCAT HTML CODES
             if (this.ITEMS_TRENDING.includes(item.ID)) {
-                HTML.trending += item_html;
+                HTML.trending += this.createSliderItems(item);
             }
+
             if (this.ITEMS_SUGGEST.includes(item.ID)) {
-                HTML.suggestions += item_html;
+                HTML.suggestions += this.createSliderItems(item);
             }
 
             if (this.ITEMS_VIEWED.has(item.ID)) {
-                HTML.viewed += item_html;
+                HTML.viewed += this.createSliderItems(item);
+            }
+
+            if (this.ITEMS_SHOWCASE_1.includes(item.ID)) {
+                HTML.showcase_1 += this.createShowcaseItems(item);
+            }
+
+            if (this.ITEMS_SHOWCASE_2.includes(item.ID)) {
+                HTML.showcase_2 += this.createShowcaseItems(item);
+            }
+
+            if (this.ITEMS_SHOWCASE_3.includes(item.ID)) {
+                HTML.showcase_3 += this.createShowcaseItems(item);
             }
         });
 
         //INSERT HTML CODES INTO SLIDER
-
         if (args.includes("all")) {
-            args = ["trending", "suggestions", "viewed"];
+            args = ["trending", "suggestions", "viewed", "showcase"];
         }
+
         if (args.includes("trending")) {
             trendingList.innerHTML = HTML.trending;
         }
@@ -127,6 +125,11 @@ const landingPage = {
             this.ITEMS_VIEWED.size <= 0
                 ? (viewedList_Wrapper.style = "display: none")
                 : (viewedList_Wrapper.style = "display: block");
+        }
+        if (args.includes("showcase")) {
+            showcase_1.innerHTML = HTML.showcase_1;
+            showcase_2.innerHTML = HTML.showcase_2;
+            showcase_3.innerHTML = HTML.showcase_3;
         }
     },
 
@@ -195,6 +198,26 @@ const landingPage = {
                     }
                 }
             }, 100);
+        }
+    },
+
+    toggleSearch: () => {
+        let searchContainer = $$(".header__search");
+
+        for (let i = 0; i < searchContainer.length; i++) {
+            searchContainer[i].children[1].addEventListener("click", () => {
+                searchContainer[i].children[0].classList.add("search--active");
+                searchContainer[i].children[1].classList.add("search--active");
+                document.addEventListener("click", function closeSearch() {
+                    searchContainer[i].children[0].classList.remove("search--active");
+                    searchContainer[i].children[1].classList.remove("search--active");
+
+                    document.removeEventListener("click", closeSearch);
+                });
+                searchContainer[i].addEventListener("click", (e) => {
+                    e.stopPropagation();
+                });
+            });
         }
     },
 
@@ -306,7 +329,7 @@ const landingPage = {
     },
 
     addToCart: function () {
-        let addToCart_btns = $$(".items-slider__cart-btn");
+        let addToCart_btns = $$(".add-to-cart__btn");
 
         //CREATE EVENT LISTENERS FOR ADD TO CART BUTTON IN EACH ITEM//
         for (let i = 0; i < addToCart_btns.length; i++) {
@@ -321,7 +344,7 @@ const landingPage = {
                 //render cart count number to view
                 this.updateCartCounter();
 
-                this.renderSliderItems("viewed");
+                this.renderItems("viewed");
                 // console.log(addedItem);
             });
         }
@@ -453,13 +476,65 @@ const landingPage = {
         }
     },
 
+    createSliderItems: (item) => {
+        //ADD STAR RATINGS TO ITEMS
+        let starsCount = item.ratings;
+        let starSet = "";
+        for (; starsCount >= 1; starsCount--) {
+            starSet += `<div class="items-slider__star star--full"></div>`;
+        }
+        if (starsCount > 0) {
+            starSet += `<div class="items-slider__star star--half"></div>`;
+        }
+
+        //CREATE HTML CODES FOR ITEMS
+        return `
+        <li class="items-slider__item ">
+            <a href="${item.link}" class="items-slider__link">
+                <div class="items-slider__pic" style="background-image: url(${item.picture});"></div>
+                <div class="items-slider__name">${item.name}</div>
+                <div class="items-slider__price">
+                    <span class="price--old">${item.price_old}</span>
+                    <span class="price--current">$${item.price_current}</span>
+                </div>
+                <div class="items-slider__ratings">${starSet}</div>
+            </a>
+
+            <button data-item-ID = ${item.ID} class="items-slider__cart-btn add-to-cart__btn">
+                <span>ADD TO CART</span>
+            </button>
+        </li>`;
+    },
+
+    createShowcaseItems: (item) => {
+        return `
+        <li class="showcase-coll__item">
+            <a href=${item.link} class="showcase-item__pic">
+                <img src=${item.picture} alt="">
+            </a>
+
+            <a href=${item.link} class="showcase-item__name">
+                <span> ${item.name}</span>
+            </a>
+
+            <span class="showcase-item__prices">
+                <span class="showcase-item__price price--current">$${item.price_current}</span>
+                <span class="showcase-item__price price--old">${item.price_old}</span>
+            </span>
+
+            <div data-item-ID = ${item.ID} class="showcase-item__cart-btn add-to-cart__btn">ADD TO CART</div>
+
+        </li>`;
+    },
+
     start: async function () {
         await this.getData();
         await this.renderSliderContainer();
         await this.addToCart();
         this.renderMenu();
-        this.toggleCart();
         this.renderCoverSlider();
+        this.toggleSearch();
+        this.toggleCart();
     },
 };
 
