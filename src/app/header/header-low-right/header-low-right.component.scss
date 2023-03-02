@@ -1,0 +1,44 @@
+@use "/src/app/utilities.scss" as var;
+
+.search {
+  display: flex;
+  align-self: flex-end;
+  align-items: center;
+  color: var.$tinted-yellow;
+  padding: 16px 0px;
+  cursor: pointer;
+  :focus-visible {
+    outline: none;
+  }
+}
+.input {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 1.3rem;
+  letter-spacing: 1px;
+  opacity: 0;
+  color: var.$tinted-yellow;
+  width: 270px;
+  height: 44px;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #453929;
+  transition: opacity 0.2s linear;
+  pointer-events: none;
+}
+
+.input.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.toggle-btn {
+  transition: opacity 0.2s linear;
+  opacity: 1;
+}
+.toggle-btn:hover {
+  opacity: 0.5;
+}
+.toggle-btn.search--active {
+  opacity: 0;
+  cursor: default;
+}

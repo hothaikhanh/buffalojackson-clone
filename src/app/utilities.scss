@@ -1,0 +1,44 @@
+$default-font: "Barlow Condensed", sans-serif;
+$title-font: "SS Nickson One", sans-serif;
+$text-font: "Libre Baskerville", serif;
+
+$tinted-yellow: #d9ccb5;
+$dark: #171007;
+$orange: #a06d33;
+$light-brown: #a59580;
+$white: #fefaf0;
+$white2: #fefbf0;
+$default-background: #171007;
+$border-color: rgba(0, 0, 0, 0.2);
+
+.row-rev {
+  flex-direction: row-reverse;
+}
+
+@keyframes hoverFade {
+  0% {
+    opacity: 100%;
+  }
+  25% {
+    opacity: 90%;
+  }
+  50% {
+    opacity: 80%;
+  }
+  100% {
+    opacity: 70%;
+  }
+}
+
+@keyframes hoverColor {
+  100% {
+    color: $dark;
+    background-color: $tinted-yellow;
+  }
+}
+
+@keyframes hoverDropdown {
+  100% {
+    color: $tinted-yellow;
+  }
+}

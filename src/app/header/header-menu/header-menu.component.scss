@@ -1,0 +1,71 @@
+@use "/src/app/utilities.scss" as var;
+
+:host {
+  display: block;
+  width: 100vw;
+}
+
+.dropdownn-section {
+  display: none;
+  background-image: url("/assets/img/nav-bg.webp");
+  align-content: stretch;
+  height: fit-content;
+  border-top: 1px solid #453929;
+  justify-content: space-between;
+  padding: 15px 25px;
+}
+
+.dropdownn-section.dropdown--active {
+  display: flex;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  padding: 0px 15px;
+  flex-basis: calc(100% / 6);
+  flex-grow: 1;
+  color: var.$tinted-yellow;
+}
+
+.title {
+  font-weight: 700;
+  padding: 19px 0px 14px;
+  line-height: 1.6rem;
+  font-size: 1rem;
+  letter-spacing: 0.8px;
+  border-bottom: 1px solid #453929;
+  text-transform: uppercase;
+  :hover {
+    animation: hoverFade 0.2s linear forwards;
+  }
+}
+.item {
+  font-weight: 500;
+  padding: 6px 0px;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  color: var.$light-brown;
+  text-transform: capitalize;
+  :hover {
+    animation: hoverDropdown 0.2s linear forwards;
+  }
+}
+
+.item--top {
+  padding-top: 12px;
+}
+
+.item--new {
+  color: var.$orange;
+  text-transform: uppercase;
+  :hover {
+    animation: none;
+  }
+}
+
+.image {
+  width: 100%;
+  padding: 21px 0 0;
+  margin-bottom: 10px;
+}

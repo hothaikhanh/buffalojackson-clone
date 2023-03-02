@@ -1,0 +1,142 @@
+@use "../utilities.scss" as var;
+
+.container {
+  position: relative;
+  align-items: center;
+  display: flex;
+}
+
+//navigation styles
+.nav {
+  z-index: 1;
+  position: absolute;
+  fill: var.$tinted-yellow;
+  width: 35px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.nav--left {
+  left: 0px;
+}
+
+.nav--right {
+  right: 0px;
+}
+//navigation styles
+
+.pages {
+  width: 100%;
+}
+
+.page {
+  display: none;
+  width: 100%;
+  height: 600px;
+}
+
+.page--active {
+  display: block;
+}
+
+.cover {
+  position: absolute;
+  height: inherit;
+  width: inherit;
+  overflow: hidden;
+  background-position: center center;
+  background-size: cover;
+}
+
+.overlay {
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  background-color: black;
+
+  opacity: 30%;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+}
+
+.title--main {
+  font-size: 126px;
+  color: var.$white;
+  letter-spacing: 2px;
+  text-align: center;
+  margin: 50px 0px 0px;
+  line-height: 0.8em;
+  font-family: var.$title-font;
+  font-weight: 500;
+}
+
+.title--sub {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  color: var.$white;
+  font-size: 24px;
+  font-weight: 400;
+}
+.links {
+  margin-top: 35px;
+  display: flex;
+  :hover {
+    opacity: 95%;
+  }
+}
+.btn {
+  padding-top: 14px;
+  padding-left: 40px;
+  padding-bottom: 13px;
+  padding-right: 40px;
+  border-radius: 2px;
+
+  color: var.$white;
+  background-color: var.$orange;
+  font-size: 24px;
+  line-height: 1.6em;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.btn + .btn {
+  margin-left: 40px;
+}
+
+.transition {
+  pointer-events: none;
+  width: 100%;
+  height: 600px;
+  position: absolute;
+  top: 0;
+  display: block;
+  //   animation: page-transition-animation [blurTimer] linear forwards;
+  animation-name: page-transition-animation;
+  animation-duration: 1.5s;
+
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes page-transition-animation {
+  0% {
+    background-color: var.$tinted-yellow;
+    opacity: 100%;
+  }
+
+  100% {
+    display: none;
+    opacity: 0%;
+  }
+}
