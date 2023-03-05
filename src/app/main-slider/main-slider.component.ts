@@ -1,4 +1,4 @@
-import { Component, ViewChild, ElementRef, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-main-slider',
@@ -6,28 +6,52 @@ import { Component, ViewChild, ElementRef, OnInit } from '@angular/core';
   styleUrls: ['./main-slider.component.scss'],
 })
 export class MainSliderComponent implements OnInit {
-  slidersCount: number = 4;
-  sliders: number[] = Array.from(Array(this.slidersCount).keys());
+  slidersLength: number = 4;
+  sliderDuration: number = 8000
+
   blur: boolean = false;
-  blurTimer: number = 1500
+  curSlider: any[] = Array.from(Array(this.slidersLength).keys());
 
   ngOnInit() {
     this.playTransition();
   }
 
-  nextSlideTimer = setInterval(() => {
-    this.toNextSlide();
-  }, 8000);
 
+  setSlideTimer = setInterval(() => {
+    this.playTransition();
+    this.curSlider.push(this.curSlider.shift())
+  }, this.sliderDuration);
 
-  toNextSlide() { this.playTransition(); }
+  toNextSlide() {
+    clearInterval(this.setSlideTimer)
 
-  toPrevSlide() { this.playTransition(); }
+    this.playTransition();
+    this.curSlider.push(this.curSlider.shift())
+
+    this.setSlideTimer = setInterval(() => {
+      this.playTransition();
+      this.curSlider.push(this.curSlider.shift())
+    }, this.sliderDuration);
+
+  }
+
+  toPrevSlide() {
+    clearInterval(this.setSlideTimer)
+
+    this.playTransition();
+    this.curSlider.unshift(this.curSlider.pop())
+
+    this.setSlideTimer = setInterval(() => {
+      this.playTransition();
+      this.curSlider.push(this.curSlider.shift())
+    }, this.sliderDuration);
+
+  }
 
   playTransition() {
-    this.blur = true;
+    this.blur = false;
     setTimeout(() => {
-      this.blur = false;
-    }, this.blurTimer);
+      this.blur = true;
+    }, 10);
   }
 }

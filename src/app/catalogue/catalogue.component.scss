@@ -1,0 +1,82 @@
+@use "../utilities.scss" as var;
+
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 24px 0px;
+  background-color: var.$default-background;
+  color: var.$white;
+}
+
+.list {
+  width: 60%;
+  display: flex;
+  justify-content: space-between;
+}
+.catalouge {
+  height: auto;
+  width: auto;
+  :hover {
+    color: var.$orange;
+  }
+}
+
+.picture {
+  width: 150px;
+  height: 150px;
+  cursor: pointer;
+}
+
+.catalouge-DUFFLES .picture {
+  background-image: url(/assets/img/catergory-1.webp);
+}
+.catalouge-DUFFLES .picture:hover {
+  background-image: url(/assets/img/catergory-1-alt.webp);
+}
+
+.catalouge-MESSENGERS .picture {
+  background-image: url(/assets/img/catergory-2.webp);
+}
+.catalouge-MESSENGERS .picture:hover {
+  background-image: url(/assets/img/catergory-2-alt.webp);
+}
+
+.catalouge-BRIEFCASES .picture {
+  background-image: url(/assets/img/catergory-3.webp);
+}
+.catalouge-BRIEFCASES .picture:hover {
+  background-image: url(/assets/img/catergory-3-alt.webp);
+}
+
+.catalouge-BACKPACKS .picture {
+  background-image: url(/assets/img/catergory-4.webp);
+}
+.catalouge-BACKPACKS .picture:hover {
+  background-image: url(/assets/img/catergory-4-alt.webp);
+}
+
+.catalouge-WALLETS .picture {
+  background-image: url(/assets/img/catergory-5.webp);
+}
+.catalouge-WALLETS .picture:hover {
+  background-image: url(/assets/img/catergory-5-alt.webp);
+}
+
+.catalouge-JACKETS .picture {
+  background-image: url(/assets/img/catergory-6.webp);
+}
+.catalouge-JACKETS .picture:hover {
+  background-image: url(/assets/img/catergory-6-alt.webp);
+}
+
+.name {
+  padding: 10px 0px;
+  margin-top: 20px;
+  font-size: 1.6rem;
+  line-height: 1.6rem;
+  text-align: center;
+  cursor: pointer;
+  transition-property: color;
+  transition-duration: 0.2s;
+}

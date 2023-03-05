@@ -11,6 +11,10 @@ import { HeaderLowRightComponent } from './header/header-low-right/header-low-ri
 import { HeaderLowLeftComponent } from './header/header-low-left/header-low-left.component';
 import { HeaderCenterComponent } from './header/header-center/header-center.component';
 import { MainSliderComponent } from './main-slider/main-slider.component';
+import { CatalogueComponent } from './catalogue/catalogue.component';
+import { CollectionComponent } from './collection/collection.component';
+import { SliderItemComponent } from './slider-item/slider-item.component';
+import { SliderComponent } from './slider/slider.component';
 
 
 @NgModule({
@@ -24,6 +28,10 @@ import { MainSliderComponent } from './main-slider/main-slider.component';
     HeaderCenterComponent,
     HeaderMenuComponent,
     MainSliderComponent,
+    CatalogueComponent,
+    CollectionComponent,
+    SliderItemComponent,
+    SliderComponent,
     
   ],
   imports: [

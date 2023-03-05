@@ -1,0 +1,88 @@
+@use "/src/app/utilities.scss" as var;
+
+.items-slider__item {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+}
+
+.items-slider__cart-btn {
+  position: absolute;
+  padding: 4px;
+  background-color: var.$orange;
+  height: max-content;
+  color: var.$white;
+  border: none;
+  opacity: 0;
+  transition: all 0.2s linear;
+  transform: translateY(40px);
+  cursor: pointer;
+}
+
+.items-slider__item:hover .items-slider__cart-btn {
+  transform: translateY(0px);
+
+  opacity: 1;
+}
+
+.items-slider__cart-btn span {
+  font-weight: bold;
+  letter-spacing: 1px;
+  line-height: 2rem;
+  display: inline-block;
+  border: 1px solid white;
+  padding: 4px 60px;
+  pointer-events: none;
+}
+
+.items-slider__link {
+  display: inline-block;
+  padding: 15px;
+  width: 275px;
+  height: 440px;
+  border: 1px solid var.$border-color;
+}
+
+.items-slider__pic {
+  margin-top: 15px;
+  width: 100%;
+  height: 243px;
+  background-position: center;
+  background-size: contain;
+}
+.items-slider__name {
+  margin-top: 24px;
+  font-family: var.$title-font;
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+  letter-spacing: 1px;
+  font-weight: 400;
+  max-height: 50px;
+  overflow: hidden;
+}
+.items-slider__price {
+  margin-top: 0.8rem;
+  font-size: 1.3rem;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 100;
+  line-height: normal;
+}
+.items-slider__ratings {
+  margin-top: 4px;
+  display: flex;
+}
+.items-slider__star {
+  width: 1rem;
+  height: 1rem;
+  margin-left: 1px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.star--full {
+  background-image: url(/src/assets/img/star.svg);
+}
+.star--half {
+  background-image: url(/src/assets/img/star-half.svg);
+}

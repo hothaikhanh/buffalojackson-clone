@@ -1,0 +1,25 @@
+<div class="container">
+
+    <div class="title">{{slider_title}}</div>
+
+    <div class="nav nav--left nav--inactive">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="-10 -10 44.5 62.03">
+            <path
+                d="M5 .6a2 2 0 0 0-3 0L1 1.8a2 2 0 0 0 0 2.8l14.6 14.7a2 2 0 0 1 0 2.8L.6 37a2 2 0 0 0 0 3L2 41.3a2 2 0 0 0 3 0l19-19a2 2 0 0 0 0-2.8z">
+            </path>
+        </svg>
+    </div>
+
+    <ul class="items-container">
+        *ngFor="let item of items; let i=index; trackBy: trackById"
+    </ul>
+
+    <div class="nav nav--right nav--active">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="-10 -10 44.5 62.03">
+            <path
+                d="M5 .6a2 2 0 0 0-3 0L1 1.8a2 2 0 0 0 0 2.8l14.6 14.7a2 2 0 0 1 0 2.8L.6 37a2 2 0 0 0 0 3L2 41.3a2 2 0 0 0 3 0l19-19a2 2 0 0 0 0-2.8z">
+            </path>
+        </svg>
+    </div>
+
+</div>

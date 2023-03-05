@@ -1,0 +1,80 @@
+@use "/src/app/utilities.scss" as var;
+
+.container {
+  position: relative;
+  margin: 40px 30px 20px;
+  overflow: hidden;
+}
+
+.title {
+  font-family: var.$title-font;
+  color: var.$dark;
+  font-size: 1.85rem;
+  letter-spacing: 2px;
+  border-bottom: 1px solid var.$border-color;
+  margin: 0px 0px 20px;
+  padding-top: 20px;
+  line-height: 3rem;
+}
+.items-container {
+  width: fit-content;
+  margin: 20px 0px;
+  display: flex;
+  transition: transform 0.2s cubic-bezier(0.12, 0, 0.39, 0);
+}
+
+.nav {
+  position: absolute;
+  width: 40px;
+  height: 80px;
+  border-radius: 0px 2px 2px 0px;
+  background-color: rgba(255, 255, 255, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px 0px 0px 6px;
+  fill: grey;
+  padding: 0px 5px;
+  margin: auto;
+  top: 0px;
+  bottom: 36px;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.nav--right {
+  right: 0px;
+}
+
+.nav--left {
+  left: 0px;
+  rotate: 180deg;
+}
+
+.nav--inactive {
+  animation: fadeOut 0.2s forwards linear;
+}
+
+.nav--active {
+  animation: fadeIn 0.2s forwards linear;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}

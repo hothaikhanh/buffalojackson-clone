@@ -1,5 +1,6 @@
 <div class="container">
-    <div class="nav nav--left">
+
+    <div class="nav nav--left" (click)="toPrevSlide()">
         <svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
             <path
                 d="M1203 544q0 13-10 23l-393 393 393 393q10 10 10 23t-10 23l-50 50q-10 10-23 10t-23-10l-466-466q-10-10-10-23t10-23l466-466q10-10 23-10t23 10l50 50q10 10 10 23z">
@@ -8,8 +9,7 @@
     </div>
 
     <div class="pages">
-
-        <div data-sliderID="0" class="page page--active">
+        <div class="page " [ngClass]="{'page--active': curSlider[0] == 0 }">
             <div class="cover" style="background-image: url(assets/img/slider-1.webp)">
                 <div class="overlay"></div>
 
@@ -31,7 +31,7 @@
             </div>
         </div>
 
-        <div data-sliderID="1" class="page">
+        <div class="page " [ngClass]="{'page--active': curSlider[0] == 1 }">
             <div class="cover" style="background-image: url(assets/img/slider-2.webp)">
                 <div class="overlay"></div>
 
@@ -50,7 +50,7 @@
 
         </div>
 
-        <div data-sliderID="2" class="page">
+        <div class="page" [ngClass]="{'page--active': curSlider[0] == 2 }">
             <div class="cover" style="background-image: url(assets/img/slider-3.webp)">
                 <div class="overlay"></div>
                 <div class="content">
@@ -73,7 +73,7 @@
 
         </div>
 
-        <div data-sliderID="3" class="page">
+        <div class="page" [ngClass]="{'page--active': curSlider[0] == 3 }">
             <div class="cover" style="background-image: url(assets/img/slider-4.webp)">
                 <div class="overlay"></div>
 
@@ -100,15 +100,14 @@
         <div class="transition-container">
             <div *ngIf="blur" class=transition></div>
         </div>
-
-
     </div>
 
-    <div class="nav nav--right">
+    <div class="nav nav--right" (click)="toNextSlide()">
         <svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
             <path
                 d="M1171 960q0 13-10 23l-466 466q-10 10-23 10t-23-10l-50-50q-10-10-10-23t10-23l393-393-393-393q-10-10-10-23t10-23l50-50q10-10 23-10t23 10l466 466q10 10 10 23z">
             </path>
         </svg>
     </div>
+
 </div>

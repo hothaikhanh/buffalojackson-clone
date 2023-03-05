@@ -121,10 +121,9 @@
   position: absolute;
   top: 0;
   display: block;
-  //   animation: page-transition-animation [blurTimer] linear forwards;
+
   animation-name: page-transition-animation;
   animation-duration: 1.5s;
-
   animation-timing-function: linear;
   animation-fill-mode: forwards;
 }
