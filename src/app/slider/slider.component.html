@@ -11,7 +11,19 @@
     </div>
 
     <ul class="items-container">
-        *ngFor="let item of items; let i=index; trackBy: trackById"
+
+        <!-- <app-slider-item *ngFor="let item of itemsList; let i=index;" [link]=itemsList[i].link
+            [picture]=itemsList[i].picture [name]=itemsList[i].name [price_old]=itemsList[i].price_old
+            [price_current]=itemsList[i].price_current [ID]=itemsList[i].ID [ratings]=itemsList[i].ratings>
+        </app-slider-item> -->
+
+        <li *ngFor="let item of itemsList; let i=index;">
+            <app-slider-item [link]=itemsList[i].link [picture]=itemsList[i].picture [name]=itemsList[i].name
+                [price_old]=itemsList[i].price_old [price_current]=itemsList[i].price_current [ID]=itemsList[i].ID
+                [ratings]=itemsList[i].ratings></app-slider-item>
+        </li>
+
+
     </ul>
 
     <div class="nav nav--right nav--active">

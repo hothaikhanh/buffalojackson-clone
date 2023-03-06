@@ -1,1 +1,15 @@
-<p>slider-item works!</p>
+<div class="container ">
+    <a href="{{link}}" class="link">
+        <div class="pic" style="background-image: url({{picture}});"></div>
+        <div class="name">{{name}}</div>
+        <div class="price">
+            <span *ngIf="(price_old)" class="price--old">${{price_old}}</span>
+            <span>${{price_current}}</span>
+        </div>
+        <div class="ratings">{{starSet}}</div>
+    </a>
+
+    <button class="cart-btn add-to-cart__btn">
+        <span>ADD TO CART</span>
+    </button>
+</div>

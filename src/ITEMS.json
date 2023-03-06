@@ -5,7 +5,7 @@
         "picture": "https://cdn.shopify.com/s/files/1/0003/2725/4068/products/bridger-down-leather-jacket-lifestyle_275x275.jpg?v=1668518986",
         "name": "Bridger Leather Down Jacket | Light Brown",
         "price_current": 439.95,
-        "price_old": "$489.95",
+        "price_old": 489.95,
         "ratings": 4.5,
         "sizes": [
             "S",
@@ -21,7 +21,7 @@
         "picture": "https://cdn.shopify.com/s/files/1/0003/2725/4068/products/mens-wesley-wool-jacket-lifestyle-_2-of-4_275x275.jpg?v=1663862458",
         "name": "Wesley Wool Jacket | Brown",
         "price_current": 229.95,
-        "price_old": "",
+        "price_old": null,
         "ratings": 5,
         "sizes": [
             "S",
@@ -37,7 +37,7 @@
         "picture": "https://cdn.shopify.com/s/files/1/0003/2725/4068/products/legacy-leather-jacket-brown-_1-of-9_275x275.jpg?v=1634060705",
         "name": "Legacy Leather Jacket | Brown",
         "price_current": 489.95,
-        "price_old": "",
+        "price_old": null,
         "ratings": 5,
         "sizes": [
             "S",
@@ -53,7 +53,7 @@
         "picture": "https://cdn.shopify.com/s/files/1/0003/2725/4068/products/Roosevelt_Buffalo_Leather_Pilot_Bag_Dark_Oak_1-copy_275x275.jpg?v=1571710379",
         "name": "Roosevelt Buffalo Leather Pilot Bag | Dark Oak",
         "price_current": 324.95,
-        "price_old": "",
+        "price_old": null,
         "ratings": 5,
         "sizes": [
             "S",
@@ -69,7 +69,7 @@
         "picture": "https://cdn.shopify.com/s/files/1/0003/2725/4068/products/Roosevelt_Buffalo_Leather_Satchel_Messenger_Bag_Dark_Oak_1-copy_275x275.jpg?v=1636051882",
         "name": "Roosevelt Buffalo Leather Satchel Messenger Bag | Dark Oak",
         "price_current": 299.95,
-        "price_old": "",
+        "price_old": null,
         "ratings": 5,
         "sizes": [
             "S",
@@ -85,7 +85,7 @@
         "picture": "https://cdn.shopify.com/s/files/1/0003/2725/4068/products/Roosevelt_Buffalo_Leather_Satchel_Messenger_Bag_Large_Dark_Oak_1-copy_275x275.jpg?v=1571710380",
         "name": "Roosevelt Buffalo Leather Satchel Messenger Bag - Large | Dark Oak",
         "price_current": 324.95,
-        "price_old": "",
+        "price_old": null,
         "ratings": 5,
         "sizes": [
             "S",
@@ -101,7 +101,7 @@
         "picture": "https://cdn.shopify.com/s/files/1/0003/2725/4068/products/driggs-leather-jacket-brown-_5-of-10_275x275.jpg?v=1666966267",
         "name": "Driggs Leather Jacket | Brown",
         "price_current": 489.95,
-        "price_old": "",
+        "price_old": null,
         "ratings": 5,
         "sizes": [
             "S",
@@ -117,7 +117,7 @@
         "picture": "https://cdn.shopify.com/s/files/1/0003/2725/4068/products/Ryder_Reserve_Bison_Leather_Briefcase_Brown_1_275x275.jpg?v=1571710380",
         "name": "Ryder Reserve Bison Leather Briefcase | Brown",
         "price_current": 449.95,
-        "price_old": 524.95,
+        "price_old": 24.9,
         "ratings": 5,
         "sizes": [
             "S",
@@ -133,7 +133,7 @@
         "picture": "https://cdn.shopify.com/s/files/1/0003/2725/4068/products/waxed-canvas-rugged-jacket-laramie-5_275x275.jpg?v=1643818495",
         "name": "Laramie Waxed Canvas Trucker | Tobacco Tan",
         "price_current": 199.95,
-        "price_old": "",
+        "price_old": null,
         "ratings": 4.5,
         "sizes": [
             "S",
@@ -149,7 +149,7 @@
         "picture": "https://cdn.shopify.com/s/files/1/0003/2725/4068/products/driggs-leather-jacket-brown-34_84aeadd1-3b56-4ff1-8b7f-9918d4d60bdc_275x275.jpg?v=1652455901",
         "name": "Driggs Leather Jacket | Cognac Brown",
         "price_current": 489.95,
-        "price_old": "",
+        "price_old": null,
         "ratings": 4.5,
         "sizes": [
             "S",
@@ -165,7 +165,7 @@
         "picture": "https://cdn.shopify.com/s/files/1/0003/2725/4068/products/Ryder_Reserve_Bison_Leather_Duffle_Brown_4_2000x.jpg?v=1571710381",
         "name": "Ryder Reserve Bison Leather Travel Duffle Bag | Brown",
         "price_current": 599.95,
-        "price_old": "",
+        "price_old": null,
         "ratings": 5,
         "sizes": [
             "S",
@@ -181,7 +181,7 @@
         "picture": "https://cdn.shopify.com/s/files/1/0003/2725/4068/products/denver_leather_laptop_messenger_bag_autumn_brown-_1-of-6_2000x.jpg?v=1621617492",
         "name": "Denver Leather Laptop Messenger Bag | Autumn Brown",
         "price_current": 329.95,
-        "price_old": "",
+        "price_old": null,
         "ratings": 5,
         "sizes": [
             "S",
@@ -197,7 +197,7 @@
         "picture": "https://cdn.shopify.com/s/files/1/0003/2725/4068/products/Roosevelt_Buffalo_Leather_Travel_Duffle_Bag_Dark_Oak_1-copy_2000x.jpg?v=1602267777",
         "name": "Roosevelt Buffalo Leather Travel Duffle Bag | Dark Oak",
         "price_current": 399.95,
-        "price_old": "",
+        "price_old": null,
         "ratings": 5,
         "sizes": [
             "S",
@@ -213,7 +213,7 @@
         "picture": "https://cdn.shopify.com/s/files/1/0003/2725/4068/products/vintage-wesley-wool-jacket-grey-2_2000x.jpg?v=1662684340",
         "name": "Wesley Wool Jacket | Gray",
         "price_current": 229.95,
-        "price_old": "",
+        "price_old": null,
         "ratings": 0,
         "sizes": [
             "S",
@@ -229,7 +229,7 @@
         "picture": "https://cdn.shopify.com/s/files/1/0003/2725/4068/products/huntington-quilted-jac-shirt-bozeman-3_2000x.jpg?v=1663798962",
         "name": "Huntington Quilted Shirt Jac | Brown",
         "price_current": 129.95,
-        "price_old": "",
+        "price_old": null,
         "ratings": 5,
         "sizes": [
             "S",
@@ -245,7 +245,7 @@
         "picture": "https://cdn.shopify.com/s/files/1/0003/2725/4068/products/classic-mens-fairbanks-flannel-red-plaid-2_2000x.jpg?v=1662061252",
         "name": "Fairbanks Flannel Shirt | Red Barn",
         "price_current": 74.95,
-        "price_old": "",
+        "price_old": null,
         "ratings": 0,
         "sizes": [
             "S",
