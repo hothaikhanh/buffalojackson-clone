@@ -1,0 +1,29 @@
+<div
+  *ngIf="type == 'default'"
+  class="container"
+  style="background-image: url({{ pictureURL }})"
+>
+  <div class="overlay"></div>
+  <div class="contents">
+    <h1 class="title">{{ title }}</h1>
+    <span class="description">{{ description }}</span>
+    <a class="btn"><span>SHOP NOW</span></a>
+  </div>
+</div>
+
+<div *ngIf="type == 'video'" class="container banner-end">
+  <div class="overlay">
+    <video autoplay muted loop playsinline preload class="video">
+      <source src="{{ pictureURL }}" type="video/ogg" />
+      Your browser does not support the video tag.
+    </video>
+  </div>
+
+  <div class="contents">
+    <h1 class="title">{{ title }}</h1>
+    <span class="description">
+      {{ description }}
+    </span>
+    <a class="btn"><span>OUR STORY</span></a>
+  </div>
+</div>

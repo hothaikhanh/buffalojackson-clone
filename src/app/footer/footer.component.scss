@@ -1,0 +1,202 @@
+@use "/src/app/utilities.scss" as var;
+
+.container {
+  background-image: url(https://cdn.shopify.com/s/files/1/0003/2725/4068/t/161/assets/footer-texture-196x.jpg?v=133104504405972167811659465805);
+  color: var.$tinted-yellow;
+
+  padding-bottom: 40px;
+}
+
+//SOCIALS//
+.socials {
+  height: 60px;
+  background-image: url(https://cdn.shopify.com/s/files/1/0003/2725/4068/t/161/assets/footer-social-texture-2x.jpg?v=89872037106337253761659465804);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var.$title-font;
+  font-size: 1.4rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.socials__links {
+  display: flex;
+  fill: var.$tinted-yellow;
+  align-items: center;
+  justify-content: center;
+  margin: 0px 40px;
+}
+
+.socials__link {
+  padding-top: 5px;
+  margin: 0px 10px;
+  cursor: pointer;
+}
+
+.socials__link:hover {
+  fill: white;
+}
+
+.socials__link svg {
+  width: 22px;
+  max-height: 22px;
+}
+
+//FOOTER CONTENTS//
+.contents {
+  font-family: var.$default-font;
+  display: flex;
+  width: max-content;
+  margin-top: 70px;
+  margin-bottom: 45px;
+  margin-left: auto;
+  margin-right: auto;
+  text-transform: uppercase;
+}
+
+//EMAILS//
+.email {
+  margin-right: 40px;
+
+  max-width: 300px;
+}
+.email__title {
+  margin: 20px 0px;
+  font-family: var.$title-font;
+  font-weight: 400;
+  letter-spacing: 1px;
+  font-size: 2.25rem;
+  line-height: 2.25rem;
+}
+.email__form {
+  height: fit-content;
+  display: flex;
+  position: relative;
+  width: 100%;
+}
+
+.email__input {
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  border-bottom: 1px solid #453929;
+  flex-grow: 1;
+  color: inherit;
+  text-transform: uppercase;
+  line-height: 1.3rem;
+  padding: 0.5rem 1rem;
+}
+
+.email__input:focus {
+  outline: none;
+}
+
+.email__input:focus + label[for="email__input"] {
+  bottom: 40px;
+  font-size: 0.8rem;
+}
+
+label[for="email__input"] {
+  position: absolute;
+  bottom: 20px;
+  left: 15px;
+  font-size: 1.1rem;
+  line-height: 1.3rem;
+  transition: all 0.2s linear;
+}
+
+.email__submit {
+  font-family: var.$default-font;
+  flex-grow: 1;
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  color: inherit;
+  text-transform: uppercase;
+  font-size: 1.25rem;
+  padding: 15px;
+  border: 1px solid #453929;
+  font-weight: bold;
+  letter-spacing: 1px;
+  transition: all 0.2s linear;
+  min-width: 122px;
+}
+
+.email__submit:hover {
+  background-color: var.$white;
+  color: #453929;
+}
+
+//LIST//
+.list {
+  border-left: 1px solid #453929;
+  border-right: 1px solid #453929;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 20px 40px;
+}
+
+.list__title {
+  letter-spacing: 0.5px;
+  font-size: 1.5rem;
+  margin: 0px;
+}
+.list__items {
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+.list__item {
+  margin: 18px 0px;
+  transition: color 0.2s linear;
+}
+
+.list__item:hover {
+  color: white;
+}
+
+//CONTACTS//
+.contacts {
+  background-image: url(https://cdn.shopify.com/s/files/1/0003/2725/4068/t/161/assets/footer-page-bg.jpg?v=64631400759479925501659465803);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  margin-left: 60px;
+}
+
+.contacts h1 {
+  font-family: var.$title-font;
+  font-size: 2.35rem;
+  letter-spacing: 1px;
+  font-weight: 400;
+
+  text-align: center;
+  margin: 0px;
+}
+
+.contacts span {
+  margin: 6px;
+  box-sizing: border-box;
+  line-height: 1.2rem;
+}
+
+.contacts hr {
+  width: 80%;
+  margin: 20px auto;
+  border-bottom: 1px solid #453929;
+}
+
+.contacts br {
+  margin: 15px auto;
+}
+
+//COPYRIGHTS//
+.copyrights {
+  font-family: "Times New Roman", Times, serif;
+  text-align: center;
+  letter-spacing: 1px;
+}

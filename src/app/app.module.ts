@@ -15,6 +15,10 @@ import { CatalogueComponent } from './catalogue/catalogue.component';
 import { CollectionComponent } from './collection/collection.component';
 import { SliderItemComponent } from './slider-item/slider-item.component';
 import { SliderComponent } from './slider/slider.component';
+import { BannerComponent } from './banner/banner.component';
+import { ItemDisplayComponent } from './item-display/item-display.component';
+import { StatsComponent } from './stats/stats.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
@@ -32,6 +36,10 @@ import { SliderComponent } from './slider/slider.component';
     CollectionComponent,
     SliderItemComponent,
     SliderComponent,
+    BannerComponent,
+    ItemDisplayComponent,
+    StatsComponent,
+    FooterComponent,
     
   ],
   imports: [

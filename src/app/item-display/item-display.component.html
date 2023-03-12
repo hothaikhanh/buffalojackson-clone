@@ -1,0 +1,39 @@
+<div class="container">
+  <!-- highligt section -->
+  <div class="highlights">
+    <a href="">
+      <img src="{{ [pictureURL] }}" alt="picture" />
+    </a>
+  </div>
+
+  <!-- collection section -->
+  <div class="display-container">
+    <h1 class="title">{{ title }}</h1>
+    <p class="description">{{ description }}</p>
+
+    <ul class="items-list">
+      <li *ngFor="let item of itemsList; let i = index" class="item">
+        <a href="{{ item.link }}" class="item__pic">
+          <img src="{{ item.picture }}" alt="" />
+        </a>
+
+        <a href="{{ item.link }}" class="item__name">
+          <span> {{ item.name }}</span>
+        </a>
+
+        <span class="item__prices">
+          <span class="item__price price--current"
+            >${{ item.price_current }}</span
+          >
+          <span *ngIf="item.price_old" class="item__price price--old"
+            >${{ item.price_old }}</span
+          >
+        </span>
+
+        <div class="item__cart-btn">ADD TO CART</div>
+      </li>
+    </ul>
+
+    <div class="btn">SHOP THE COLLECTION</div>
+  </div>
+</div>

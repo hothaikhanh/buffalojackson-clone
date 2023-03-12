@@ -1,0 +1,147 @@
+@use "/src/app/utilities.scss" as var;
+
+.container {
+  position: relative;
+  width: 100%;
+  // margin: 25px 0px 0px;
+  padding: 30px calc(100% / 12 - 20px);
+  min-height: 500px;
+  background-color: rgb(68, 0, 0);
+  color: var.$white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-attachment: fixed;
+  background-position: center center;
+  background-size: cover;
+}
+
+.overlay {
+  position: absolute;
+  background-color: var.$dark;
+  opacity: 0.5;
+  display: inline-block;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+}
+
+.banner-end {
+  margin: 0px;
+  min-height: 600px;
+  padding: 0px 50px;
+  background-color: black;
+}
+
+.banner-end .contents {
+  right: 25px;
+  width: calc((100% / 12) * 7);
+}
+
+.banner-end .title {
+  font-size: 5.3rem;
+  letter-spacing: 2px;
+}
+
+.banner-end .description {
+  max-width: 95%;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 2rem;
+  padding-bottom: 20px;
+}
+
+.banner-end .overlay {
+  background-color: #1a1a1a;
+}
+
+.video {
+  top: 0;
+  left: 0;
+  position: absolute;
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+.contents {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  font-family: var.$title-font;
+  text-transform: uppercase;
+  font-size: 3.75rem;
+  line-height: 0.9em;
+  margin: 0px;
+  padding-top: 40px;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+.description {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  text-align: center;
+  font-size: 1.25rem;
+  line-height: 2.125rem;
+  margin-top: 10px;
+  padding-bottom: 30px;
+  max-width: 77%;
+}
+
+.btn {
+  padding: 14px 40px 13px;
+  background: var.$orange;
+  border-radius: 2px;
+  color: white;
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 1.6rem;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+.banner-event {
+  width: 100%;
+  color: var.$dark;
+  margin: 0px;
+  padding: 0px;
+  min-height: fit-content;
+  background-color: var.$white;
+}
+
+.banner-event .border {
+  width: 100%;
+  margin: 50px 50px 0px;
+  border: black 2px solid;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px calc(100% / 12) 20px;
+}
+
+.banner-event .title {
+  padding: 0px;
+  margin: 25px 0px 0px;
+  font-size: 2.8rem;
+  font-weight: 400;
+  letter-spacing: normal;
+  line-height: 1.2em;
+}
+
+.banner-event .details {
+  font-family: var.$text-font;
+  padding: 10px 0px 25px;
+  font-size: 1rem;
+  line-height: 1.6rem;
+  margin: 0px 20%;
+}

@@ -4,8 +4,8 @@
   max-width: 100%;
   height: auto;
   display: flex;
-  padding: 0px 50px;
-  padding-bottom: 50px;
+  padding: 50px;
+
   justify-content: space-between;
   background-color: var.$default-background;
   color: var.$white;
@@ -65,24 +65,4 @@
 .btn:hover {
   color: black;
   background: white;
-}
-
-.collection--new {
-  background-image: url(/assets/img/collection-new.webp);
-}
-.collection--best {
-  background-image: url(/assets/img/collection-best.webp);
-}
-.collection--fall {
-  background-image: url(/assets/img/collection-fall.webp);
-}
-
-.collection--wallets {
-  background-image: url(https://i.shgcdn.com/e0024149-4c9e-4a53-bb2c-25b059161699/-/format/auto/-/preview/3000x3000/-/quality/lighter/);
-}
-.collection--woman {
-  background-image: url(https://i.shgcdn.com/9b823158-27dc-479f-89ab-e94b33af00c5/-/format/auto/-/preview/3000x3000/-/quality/lighter/);
-}
-.collection--sale {
-  background-image: url(https://i.shgcdn.com/da3c9c93-0520-4b34-bada-1d1a52433ea7/-/format/auto/-/preview/3000x3000/-/quality/lighter/);
 }

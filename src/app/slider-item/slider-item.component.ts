@@ -1,4 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
+import {
+  Component, Input, OnChanges,
+  SimpleChanges, OnInit
+} from '@angular/core';
 
 @Component({
   selector: 'app-slider-item',
@@ -14,19 +17,15 @@ export class SliderItemComponent implements OnInit {
   @Input() ratings: number = 0
   @Input() ID: string = ""
 
-  starsCount: number = this.ratings;
-  starSet = "";
-  renderStars() {
-    for (let i = 0; this.starsCount >= 1; this.starsCount--) {
-
-      this.starSet += `<div class="items-slider__star star--full"></div>`;
-    }
-    if (this.starsCount > 0) {
-      this.starSet += `<div class="items-slider__star star--half"></div>`;
-    }
+  stars = {
+    half: false,
+    count: [0]
   }
 
   ngOnInit(): void {
-    this.renderStars()
+    this.stars = {
+      half: !Number.isInteger(this.ratings),
+      count: Array(Math.floor(this.ratings))
+    }
   }
 }

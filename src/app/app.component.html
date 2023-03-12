@@ -1,5 +1,79 @@
 <app-header></app-header>
+
 <app-main-slider></app-main-slider>
+
 <app-catalogue></app-catalogue>
-<app-collection></app-collection>
-<app-slider [slider_title]="'TRENDING ITEMS'" [items]="ITEMS_TRENDING"></app-slider>
+
+<app-collection
+  [pictureURL]="COLLECTION_1.pictureURL"
+  [titleMain]="COLLECTION_1.titleMain"
+  [titleSub]="COLLECTION_1.titleSub"
+></app-collection>
+
+<app-slider
+  [slider_title]="'TRENDING ITEMS'"
+  [items]="ITEMS_TRENDING"
+></app-slider>
+
+<app-item-display
+  [title]="ITEMS_SHOWCASE_1.title"
+  [description]="ITEMS_SHOWCASE_1.description"
+  [pictureURL]="ITEMS_SHOWCASE_1.pictureURL"
+  [items]="ITEMS_SHOWCASE_1.items"
+></app-item-display>
+
+<app-slider
+  [slider_title]="'YOU MAY LIKE'"
+  [items]="ITEMS_SUGGEST"
+></app-slider>
+
+<app-stats></app-stats>
+
+<app-banner
+  [type]="'default'"
+  [title]="BANNER_1.title"
+  [pictureURL]="BANNER_1.pictureURL"
+  [description]="BANNER_1.description"
+></app-banner>
+
+<app-item-display
+  [title]="ITEMS_SHOWCASE_2.title"
+  [description]="ITEMS_SHOWCASE_2.description"
+  [pictureURL]="ITEMS_SHOWCASE_2.pictureURL"
+  [items]="ITEMS_SHOWCASE_2.items"
+></app-item-display>
+
+<app-banner
+  [type]="'default'"
+  [title]="BANNER_2.title"
+  [pictureURL]="BANNER_2.pictureURL"
+  [description]="BANNER_2.description"
+></app-banner>
+
+<app-item-display
+  [title]="ITEMS_SHOWCASE_3.title"
+  [description]="ITEMS_SHOWCASE_3.description"
+  [pictureURL]="ITEMS_SHOWCASE_3.pictureURL"
+  [items]="ITEMS_SHOWCASE_3.items"
+></app-item-display>
+
+<app-slider
+  *ngIf="ITEMS_VIEWED.size > 0"
+  [slider_title]="'Recently Viewed Items'"
+  [items]="ITEMS_VIEWED"
+></app-slider>
+
+<app-collection
+  [pictureURL]="COLLECTION_2.pictureURL"
+  [titleMain]="COLLECTION_2.titleMain"
+  [titleSub]="COLLECTION_2.titleSub"
+></app-collection>
+
+<app-banner
+  [type]="'video'"
+  [title]="BANNER_END.title"
+  [pictureURL]="BANNER_END.pictureURL"
+  [description]="BANNER_END.description"
+></app-banner>
+
+<app-footer></app-footer>
