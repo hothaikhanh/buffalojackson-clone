@@ -19,6 +19,7 @@ import { BannerComponent } from './banner/banner.component';
 import { ItemDisplayComponent } from './item-display/item-display.component';
 import { StatsComponent } from './stats/stats.component';
 import { FooterComponent } from './footer/footer.component';
+import { CartComponent } from './cart/cart.component';
 
 
 @NgModule({
@@ -40,6 +41,7 @@ import { FooterComponent } from './footer/footer.component';
     ItemDisplayComponent,
     StatsComponent,
     FooterComponent,
+    CartComponent,
     
   ],
   imports: [

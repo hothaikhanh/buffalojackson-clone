@@ -88,5 +88,4 @@ export class AppComponent {
     description: "You can tell a lot about a person by what they carry. Even more by what they leave behind. That's the difference between luggage, and baggage. Buffalo Jackson Leather Goods. Built to Roam.™"
   }
 
-
 }
