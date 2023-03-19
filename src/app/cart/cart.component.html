@@ -1,8 +1,8 @@
-<div class="container cart--active">
-  <div class="overlay"></div>
+<div class="container" [ngClass]="{ 'cart--active': cartStatus }">
+  <div class="overlay" (click)="hideCart()"></div>
   <div class="menu">
     <div class="header">
-      <div class="exit">
+      <div class="exit" (click)="hideCart()">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 384 512"
@@ -29,59 +29,60 @@
             ></path>
           </g>
         </svg>
-        CART (<span class="counter">0</span>)
+        CART ({{ cartItems.size }})
       </div>
     </div>
 
     <div class="content">
       <!-- display if cart is empty -->
-      <div class="cart-empty__container cart--active">
+      <div class="cart-empty__container" *ngIf="cartItems.size <= 0">
         <p class="cart-empty__ms">Your Cart is Empty</p>
-        <div class="cart-empty__btn">Continue Shopping</div>
+        <div class="cart-empty__btn" (click)="hideCart()">
+          Continue Shopping
+        </div>
       </div>
 
       <!-- display if cart has items -->
-      <div class="cart-items__container">
+      <div class="cart-items__container" *ngIf="cartItems.size > 0">
         <ul class="cart-items__list">
-          <!-- <li class="item">
-                        <div class="item-pic"
-                            style="background-image: url(https://cdn.shopify.com/s/files/1/0003/2725/4068/products/bridger-down-leather-jacket-lifestyle_275x275.jpg?v=1668518986);">
-                        </div>
+          <li *ngFor="let item of itemsList; let i = index" class="item">
+            <div
+              class="item-pic"
+              style="background-image: url({{ item.picture }});"
+            ></div>
 
-                        <div class="item-details">
-                            <div class="item-name">Driggs Leather Jacket Driggs Leather
-                                Jacket </div>
+            <div class="item-details">
+              <div class="item-name">{{ item.name }}</div>
 
-                            <ul class="item-size-box">
-                                <li class="item-size-option size-option--S size-option--selected">S
-                                </li>
-                                <li class="item-size-option size-option--M">M</li>
-                                <li class="item-size-option size-option--L">L</li>
-                                <li class="item-size-option size-option--XL">XL</li>
-                                <li class="item-size-option size-option--XXL ">
-                                    XXL</li>
-                            </ul>
-                            <div class="item-quantity-box">
-                                <div class="item-quantity-btn">-</div>
-                                <span class="item-quantity-display">1</span>
-                                <div class="item-quantity-btn">+</div>
-                            </div>
-                        </div>
+              <ul class="item-size-box">
+                <div *ngFor="let size of item.sizes; let i = index">
+                  <input
+                    type="radio"
+                    id="{{ item.ID }}-size{{ size }}"
+                    name="{{ item.ID }}"
+                    class="item-size-option"
+                  />
+                  <label for="{{ item.ID }}-size{{ size }}">{{ size }}</label>
+                </div>
+              </ul>
 
-                        <div class="item-price">$229.95</div>
-                        <div class="item-remove">X</div>
+              <div class="item-quantity-box">
+                <div class="item-quantity-btn quantity-btn--minus">-</div>
 
-                    </li>
+                <span class="item-quantity-display">1</span>
 
-                    <div class="total">
-                        <span>subtotal</span>
-                        <span>$100</span>
-                    </div> -->
+                <div class="item-quantity-btn quantity-btn--plus">+</div>
+              </div>
+            </div>
+
+            <div class="item-price">${{ item.price_current }}</div>
+            <div class="item-remove" (click)="removeItem(item.ID)">X</div>
+          </li>
         </ul>
 
         <div class="total">
           <span>subtotal</span>
-          <span class="total-price"></span>
+          <span class="total-price">{{ totalPrice }}</span>
         </div>
 
         <div class="cart-checkout__btn">check out</div>

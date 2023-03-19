@@ -67,15 +67,12 @@
 
 //cart empty
 .cart-empty__container {
-  display: none;
+  display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
 }
 
-.cart-empty__container.cart--active {
-  display: flex;
-}
 .cart-empty__ms {
   font-family: var.$title-font;
   font-size: 1.2rem;
@@ -98,12 +95,9 @@
 .cart-items__container {
   // margin-right: 20px;
   padding-left: 20px;
-  display: none;
-  flex-direction: column;
-}
-.cart-items__container.cart--active {
   display: flex;
   height: 100%;
+  flex-direction: column;
 }
 
 .cart-items__list {

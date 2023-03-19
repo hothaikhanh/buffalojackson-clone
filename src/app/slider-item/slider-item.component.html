@@ -1,19 +1,21 @@
 <div class="container">
-    <a href="{{ link }}" class="link">
-        <div class="pic" style="background-image: url({{picture}});"></div>
-        <div class="name">{{ name }}</div>
-        <div class="price">
-            <span *ngIf="price_old" class="price--old">${{ price_old }}</span>
-            <span [ngStyle]="{'color':price_old? 'red' : 'black' }">${{ price_current }}</span>
-        </div>
+  <a href="{{ link }}" class="link">
+    <div class="pic" style="background-image: url({{ picture }});"></div>
+    <div class="name">{{ name }}</div>
+    <div class="price">
+      <span *ngIf="price_old" class="price--old">${{ price_old }}</span>
+      <span [ngStyle]="{ color: price_old ? 'red' : 'black' }"
+        >${{ price_current }}</span
+      >
+    </div>
 
-        <ul class="ratings">
-            <li *ngFor="let star of stars.count" class="star star--full"></li>
-            <li *ngIf="stars.half" class="star star--half"></li>
-        </ul>
-    </a>
+    <ul class="ratings">
+      <li *ngFor="let star of stars.count" class="star star--full"></li>
+      <li *ngIf="stars.half" class="star star--half"></li>
+    </ul>
+  </a>
 
-    <button class="cart-btn add-to-cart__btn">
-        <span>ADD TO CART</span>
-    </button>
+  <button class="cart-btn add-to-cart__btn" (click)="addToCart(ID)">
+    <span>ADD TO CART</span>
+  </button>
 </div>

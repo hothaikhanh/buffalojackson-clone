@@ -1,4 +1,4 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, Input, Output, EventEmitter } from '@angular/core';
 import { debounce } from '../debounce.decorator';
 
 @Component({
@@ -13,25 +13,34 @@ export class HeaderComponent {
   showFixedHeader: boolean = false
 
 
-  
 
-  showMenu(menuID?:any){
+
+  showMenu(menuID?: any) {
     this.activeMenu = menuID
   }
 
-  checkBrowsing(){
-    {setTimeout(() => {
-      (this.mouseOnBtns == false && this.mouseOnMenu==false)?this.activeMenu = null : false;
-    }, 200);}
+  checkBrowsing() {
+    {
+      setTimeout(() => {
+        (this.mouseOnBtns == false && this.mouseOnMenu == false) ? this.activeMenu = null : false;
+      }, 200);
+    }
   }
 
 
-  @HostListener('window:scroll', ['$event']) 
-  @debounce(50) 
-    updateScrollPosition() {
-      (window.pageYOffset > 200)? this.showFixedHeader = true : this.showFixedHeader = false;
-      
-    }
+  // @Input()
+  // showCart: boolean
 
-  constructor(){}
+  // @Output()
+  // showCartChange = new EventEmitter<boolean>()
+
+
+  @HostListener('window:scroll', ['$event'])
+  @debounce(50)
+  updateScrollPosition() {
+    (window.pageYOffset > 200) ? this.showFixedHeader = true : this.showFixedHeader = false;
+
+  }
+
+  constructor() { }
 }

@@ -2,6 +2,7 @@ import {
   Component, Input, OnChanges,
   SimpleChanges, OnInit
 } from '@angular/core';
+import { CartService } from '../cart.service';
 
 @Component({
   selector: 'app-slider-item',
@@ -17,15 +18,23 @@ export class SliderItemComponent implements OnInit {
   @Input() ratings: number = 0
   @Input() ID: string = ""
 
+  constructor(private cartService: CartService) { }
+
   stars = {
     half: false,
     count: [0]
   }
+
+
 
   ngOnInit(): void {
     this.stars = {
       half: !Number.isInteger(this.ratings),
       count: Array(Math.floor(this.ratings))
     }
+  }
+
+  addToCart(ID: string) {
+    this.cartService.addItem(ID)
   }
 }
