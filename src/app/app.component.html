@@ -76,6 +76,6 @@
   [description]="BANNER_END.description"
 ></app-banner>
 
-<app-cart></app-cart>
+<app-cart *ngIf="cartStatus"></app-cart>
 
 <app-footer></app-footer>

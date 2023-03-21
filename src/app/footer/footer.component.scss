@@ -88,13 +88,8 @@
   padding: 0.5rem 1rem;
 }
 
-.email__input:focus {
+input:focus {
   outline: none;
-}
-
-.email__input:focus + label[for="email__input"] {
-  bottom: 40px;
-  font-size: 0.8rem;
 }
 
 label[for="email__input"] {
@@ -104,6 +99,11 @@ label[for="email__input"] {
   font-size: 1.1rem;
   line-height: 1.3rem;
   transition: all 0.2s linear;
+}
+
+label[for="email__input"].shrunk {
+  bottom: 40px;
+  font-size: 0.8rem;
 }
 
 .email__submit {

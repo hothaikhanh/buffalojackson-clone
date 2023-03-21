@@ -16,11 +16,11 @@ export class HeaderTopRightComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.cartService.status.subscribe(c => {
+    this.cartService.cartStatusSubject.subscribe(c => {
       this.cartStatus = c;
     });
 
-    this.cartService.items.subscribe(c => {
+    this.cartService.cartItemsSubject.subscribe(c => {
       this.cartItems = c;
     })
   }

@@ -55,8 +55,16 @@
     <div class="email">
       <h1 class="email__title">Get 10% Off First Purchase</h1>
       <form class="email__form">
-        <input class="email__input" type="text" />
-        <label for="email__input">EMAIL</label>
+        <input
+          class="email__input"
+          type="text"
+          (focus)="focusEmail()"
+          (blur)="blurEmail()"
+          #input
+        />
+        <label for="email__input" [ngClass]="{ shrunk: emailFocus }"
+          >EMAIL</label
+        >
         <button class="email__submit">sign up</button>
       </form>
     </div>

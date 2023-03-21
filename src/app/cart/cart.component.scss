@@ -1,7 +1,7 @@
 @use "/src/app/utilities.scss" as var;
 
 .container {
-  display: none;
+  display: block;
   position: fixed;
   z-index: 999;
   width: 100%;
@@ -10,29 +10,17 @@
   left: 0px;
 }
 
-.cart--active.container {
-  display: block;
-}
-
-.cart--active > .overlay {
-  opacity: 1;
-}
-
-.cart--active > .menu {
-  right: 0px;
-}
-
 .overlay {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.7);
-  opacity: 0;
+  opacity: 1;
   transition: opacity 0.2s linear;
 }
 
 .menu {
   position: absolute;
-  right: -400px;
+  right: 0px;
   top: 0px;
   height: 100%;
   width: 400px;

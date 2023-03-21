@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import data from "src/ITEMS.json"
+import { CartService } from '../cart.service';
 
 
 @Component({
@@ -20,7 +21,12 @@ export class ItemDisplayComponent implements OnInit {
   @Input()
   items: any
 
+  @Input()
+  ID: any
+
   itemsList: any = [];
+
+  constructor(private cartService: CartService) { }
 
   getItemsList() {
     for (let i = 0; i < data.length; i++) {
@@ -32,6 +38,12 @@ export class ItemDisplayComponent implements OnInit {
 
   ngOnInit(): void {
     this.getItemsList()
+  }
+
+  addToCart(ID: string) {
+    this.cartService.addItem(ID)
+    console.log(`item with id: ${ID} has been added`);
+
   }
 
 }

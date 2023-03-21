@@ -1,4 +1,4 @@
-<div class="container" [ngClass]="{ 'cart--active': cartStatus }">
+<div class="container">
   <div class="overlay" (click)="hideCart()"></div>
   <div class="menu">
     <div class="header">
@@ -45,7 +45,7 @@
       <!-- display if cart has items -->
       <div class="cart-items__container" *ngIf="cartItems.size > 0">
         <ul class="cart-items__list">
-          <li *ngFor="let item of itemsList; let i = index" class="item">
+          <li class="item" *ngFor="let item of menuItems; let i = index">
             <div
               class="item-pic"
               style="background-image: url({{ item.picture }});"
@@ -67,22 +67,32 @@
               </ul>
 
               <div class="item-quantity-box">
-                <div class="item-quantity-btn quantity-btn--minus">-</div>
+                <div
+                  class="item-quantity-btn quantity-btn--minus"
+                  (click)="subtractQuantity(item.ID)"
+                >
+                  -
+                </div>
 
-                <span class="item-quantity-display">1</span>
+                <span class="item-quantity-display">{{ item.quantity }}</span>
 
-                <div class="item-quantity-btn quantity-btn--plus">+</div>
+                <div
+                  class="item-quantity-btn quantity-btn--plus"
+                  (click)="addQuantity(item.ID)"
+                >
+                  +
+                </div>
               </div>
             </div>
 
-            <div class="item-price">${{ item.price_current }}</div>
+            <div class="item-price">${{ item.cost }}</div>
             <div class="item-remove" (click)="removeItem(item.ID)">X</div>
           </li>
         </ul>
 
         <div class="total">
           <span>subtotal</span>
-          <span class="total-price">{{ totalPrice }}</span>
+          <span class="total-price">{{ totalCost }}</span>
         </div>
 
         <div class="cart-checkout__btn">check out</div>

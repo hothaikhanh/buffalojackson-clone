@@ -26,7 +26,7 @@
   pointer-events: none;
 }
 
-.input.active {
+.input.--active {
   opacity: 1;
   pointer-events: all;
 }
@@ -38,7 +38,7 @@
 .toggle-btn:hover {
   opacity: 0.5;
 }
-.toggle-btn.search--active {
+.toggle-btn.--active {
   opacity: 0;
   cursor: default;
 }

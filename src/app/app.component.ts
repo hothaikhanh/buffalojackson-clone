@@ -1,11 +1,22 @@
 import { Component, OnInit } from '@angular/core';
+import { CartService } from './cart.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+
+  constructor(private cartService: CartService) { }
+
+  cartStatus: boolean
+  ngOnInit(): void {
+    this.cartService.cartStatusSubject.subscribe(c => {
+      this.cartStatus = c;
+    })
+  }
+
   title = 'angular-buffalojackson-clone';
   ITEMS_TRENDING: any =
     ["0001", "0002", "0003", "0004", "0005", "0006", "0007", "0008", "0009", "0010"];

@@ -1,34 +1,45 @@
 <div class="static-container">
-    <div class="col col-4">
-        <app-header-top-left></app-header-top-left>
-        <app-header-low-left (selectMenu)="showMenu($event)" (mouseenter)="[mouseOnBtns = true] "
-            (mouseleave)="[mouseOnBtns = false]; checkBrowsing()"></app-header-low-left>
-    </div>
-    <div class="col col-4">
-        <app-header-center [logoWidth]="'230px'"></app-header-center>
-    </div>
-    <div class="col col-4">
-        <app-header-top-right></app-header-top-right>
-        <app-header-low-right></app-header-low-right>
-    </div>
+  <div class="col col-4">
+    <app-header-top-left></app-header-top-left>
+    <app-header-low-left
+      (selectMenu)="showMenu($event)"
+      (mouseenter)="[(mouseOnBtns = true)]"
+      (mouseleave)="[(mouseOnBtns = false)]; checkBrowsing()"
+    ></app-header-low-left>
+  </div>
+  <div class="col col-4 center">
+    <app-header-center [logoWidth]="'230px'"></app-header-center>
+  </div>
+  <div class="col col-4">
+    <app-header-top-right></app-header-top-right>
+    <app-header-low-right></app-header-low-right>
+  </div>
 </div>
 
-
-<div class="fixed-container" [ngClass]="{'fixed-container--active': showFixedHeader }">
-    <div class="col col-4">
-        <app-header-low-left (selectMenu)="showMenu($event)" (mouseenter)="[mouseOnBtns = true] "
-            (mouseleave)="[mouseOnBtns = false]; checkBrowsing()"></app-header-low-left>
-    </div>
-    <div class="col col-4">
-        <app-header-center [logoWidth]="'150px'"></app-header-center>
-    </div>
-    <div class="col col-4">
-        <app-header-low-right></app-header-low-right>
-    </div>
+<div
+  class="fixed-container"
+  [ngClass]="{ 'fixed-container--active': showFixedHeader }"
+>
+  <div class="col col-4">
+    <app-header-low-left
+      (selectMenu)="showMenu($event)"
+      (mouseenter)="[(mouseOnBtns = true)]"
+      (mouseleave)="[(mouseOnBtns = false)]; checkBrowsing()"
+    ></app-header-low-left>
+  </div>
+  <div class="col col-4">
+    <app-header-center [logoWidth]="'150px'"></app-header-center>
+  </div>
+  <div class="col col-4">
+    <app-header-low-right></app-header-low-right>
+  </div>
 </div>
 
-
-<div class="dropdown-container" (mouseenter)="[mouseOnMenu = true]"
-    [ngClass]="{'dropdown-container--fixed': showFixedHeader}" (mouseleave)="[mouseOnMenu = false]; checkBrowsing() ">
-    <app-header-menu [activeMenu]=activeMenu></app-header-menu>
+<div
+  class="dropdown-container"
+  (mouseenter)="[(mouseOnMenu = true)]"
+  [ngClass]="{ 'dropdown-container--fixed': showFixedHeader }"
+  (mouseleave)="[(mouseOnMenu = false)]; checkBrowsing()"
+>
+  <app-header-menu [activeMenu]="activeMenu"></app-header-menu>
 </div>

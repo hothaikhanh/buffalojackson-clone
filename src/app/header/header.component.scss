@@ -15,12 +15,11 @@
   height: auto;
   display: flex;
   justify-content: space-between;
-  align-items: center;
 }
 
 .fixed-container {
   position: fixed;
-  top: -85px;
+  top: -100px;
   background-image: url("/assets/img/nav-bg.webp");
   width: 100%;
   display: flex;
@@ -47,6 +46,10 @@
   flex-direction: column;
   margin: 0px 40px;
   height: fit-content;
+}
+
+.center {
+  align-self: center;
 }
 
 :host ::ng-deep .top-row {

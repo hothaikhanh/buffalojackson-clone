@@ -25,8 +25,6 @@ export class SliderItemComponent implements OnInit {
     count: [0]
   }
 
-
-
   ngOnInit(): void {
     this.stars = {
       half: !Number.isInteger(this.ratings),
@@ -36,5 +34,7 @@ export class SliderItemComponent implements OnInit {
 
   addToCart(ID: string) {
     this.cartService.addItem(ID)
+    console.log(`item with id: ${ID} has been added`);
+
   }
 }

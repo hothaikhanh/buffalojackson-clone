@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { CartService } from '../cart.service';
 import data from "src/ITEMS.json"
 
@@ -9,44 +9,35 @@ import data from "src/ITEMS.json"
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.scss']
 })
-export class CartComponent implements OnInit, OnChanges {
+export class CartComponent implements OnInit {
 
   constructor(private cartService: CartService) { }
 
   cartStatus: boolean
   cartItems: any
-  totalPrice: number
+  totalCost: number
+  menuItems: any
 
-
-  itemsList: any = [];
-
-  getItemsList() {
-    for (let i = 0; i < data.length; i++) {
-      if (this.cartItems.has(data[i].ID)) {
-        this.itemsList.push(data[i])
-      }
-    }
-  }
 
   ngOnInit(): void {
-    this.cartService.status.subscribe(c => {
+    this.cartService.cartStatusSubject.subscribe(c => {
       this.cartStatus = c;
     })
 
-    this.cartService.items.subscribe(c => {
+    this.cartService.cartItemsSubject.subscribe(c => {
       this.cartItems = c;
     })
 
-    this.cartService.price.subscribe(c => {
-      this.totalPrice = c;
+    this.cartService.totalCostSubject.subscribe(c => {
+      this.totalCost = c;
     })
 
-    this.getItemsList()
+    this.cartService.menuItemsSubject.subscribe(c => {
+      this.menuItems = c;
+    })
   }
 
-  ngOnChanges(changes: SimpleChanges): void {
-    console.log(changes);
-  }
+
 
   hideCart() {
     this.cartService.hideCart()
@@ -56,4 +47,12 @@ export class CartComponent implements OnInit, OnChanges {
     this.cartService.removeItem(id)
   }
 
+  addQuantity(id: string) {
+    this.cartService.addQuantity(id)
+  }
+
+  subtractQuantity(id: string) {
+    this.cartService.subtractQuantity(id)
+
+  }
 }
